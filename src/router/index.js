@@ -6,6 +6,11 @@ const routes = [
     name: "Home",
     component: MainPage,
   },
+  {
+    path: "/members",
+    name: "Member",
+    component: MainPage,
+  },
 ];
 
 const router = createRouter({

@@ -1,11 +1,10 @@
 <template>
   <div class="h-full w-1/2 z-10 flex flex-col gap-3 text-center">
     <transition name="pic">
-      <Mypicture />
+      <Mypicture v-if="this.$store.state.show" />
     </transition>
-
-    <MyTitle />
-    <MySummary />
+    <MyTitle v-if="this.$store.state.show" />
+    <MySummary v-if="this.$store.state.show" />
     <NavbarBottom />
   </div>
 </template>
@@ -23,15 +22,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.pic-enter-from {
-  transform: translateX(-40px);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-.pic-enter-to {
-  transform: translateX(0px);
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-</style>
+<style></style>
