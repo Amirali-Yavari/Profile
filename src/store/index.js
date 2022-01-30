@@ -2,10 +2,14 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    show: true,
+    show: false,
     page: "home",
   },
-  mutations: {},
+  mutations: {
+    ShowTrue(state) {
+      state.show = true;
+    },
+  },
   actions: {},
   modules: {},
 });
