@@ -1,6 +1,8 @@
 <template>
-  Product
-  <NavbarBottom />
+  <div>
+    Product
+    <NavbarBottom />
+  </div>
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
