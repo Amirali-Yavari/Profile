@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainPage from "./../components/MainPage.vue";
-import Member from "./../components/member.vue";
+import Member from "../components/MemberPage.vue";
+import Product from "./../components/ProductPage.vue";
+import Contact from "./../components/ContactUs.vue"
 const routes = [
   {
     path: "/",
@@ -9,8 +11,18 @@ const routes = [
   },
   {
     path: "/members",
-    name: "Member",
+    name: "Members",
     component: Member,
+  },
+  {
+    path:"/Product",
+    name:"Product",
+    component:Product,
+  },
+  {
+    path:"/Contact",
+    name:"Contact",
+    component:Contact,
   },
 ];
 

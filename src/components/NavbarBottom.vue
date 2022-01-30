@@ -24,33 +24,35 @@
       </div>
     </router-link>
 
-    <div class="flex flex-col items-center cursor-pointer">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        aria-hidden="true"
-        role="img"
-        class="iconify iconify--icon-park-outline text-white"
-        width="28"
-        height="28"
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 48 48"
-      >
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-width="3"
-          stroke-linejoin="round"
+    <router-link to="/Product">
+      <div class="flex flex-col items-center cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          aria-hidden="true"
+          role="img"
+          class="iconify iconify--icon-park-outline text-white"
+          width="28"
+          height="28"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 48 48"
         >
-          <path d="M44 14L24 4L4 14v20l20 10l20-10V14z"></path>
-          <path d="M4 14l20 10" stroke-linecap="round"></path>
-          <path d="M24 44V24" stroke-linecap="round"></path>
-          <path d="M44 14L24 24" stroke-linecap="round"></path>
-          <path d="M34 9L14 19" stroke-linecap="round"></path>
-        </g>
-      </svg>
-      <h2 class="text-white">Product</h2>
-    </div>
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linejoin="round"
+          >
+            <path d="M44 14L24 4L4 14v20l20 10l20-10V14z"></path>
+            <path d="M4 14l20 10" stroke-linecap="round"></path>
+            <path d="M24 44V24" stroke-linecap="round"></path>
+            <path d="M44 14L24 24" stroke-linecap="round"></path>
+            <path d="M34 9L14 19" stroke-linecap="round"></path>
+          </g>
+        </svg>
+        <h2 class="text-white">Product</h2>
+      </div>
+    </router-link>
     <router-link to="/">
       <div class="flex flex-col items-center cursor-pointer">
         <svg
@@ -72,25 +74,27 @@
         <h2 class="text-white">Home</h2>
       </div>
     </router-link>
-    <div class="flex flex-col items-center cursor-pointer">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        aria-hidden="true"
-        role="img"
-        class="iconify iconify--ic text-white"
-        width="28"
-        height="28"
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M17.38 10.79l-2.2-2.2c-.28-.28-.36-.67-.25-1.02c.37-1.12.57-2.32.57-3.57c0-.55.45-1 1-1H20c.55 0 1 .45 1 1c0 9.39-7.61 17-17 17c-.55 0-1-.45-1-1v-3.49c0-.55.45-1 1-1c1.24 0 2.45-.2 3.57-.57c.35-.12.75-.03 1.02.24l2.2 2.2c2.83-1.45 5.15-3.76 6.59-6.59z"
-          fill="currentColor"
-        ></path>
-      </svg>
-      <h2 class="text-white">ContactUs</h2>
-    </div>
+    <router-link to="/Contact">
+      <div class="flex flex-col items-center cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          aria-hidden="true"
+          role="img"
+          class="iconify iconify--ic text-white"
+          width="28"
+          height="28"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.38 10.79l-2.2-2.2c-.28-.28-.36-.67-.25-1.02c.37-1.12.57-2.32.57-3.57c0-.55.45-1 1-1H20c.55 0 1 .45 1 1c0 9.39-7.61 17-17 17c-.55 0-1-.45-1-1v-3.49c0-.55.45-1 1-1c1.24 0 2.45-.2 3.57-.57c.35-.12.75-.03 1.02.24l2.2 2.2c2.83-1.45 5.15-3.76 6.59-6.59z"
+            fill="currentColor"
+          ></path>
+        </svg>
+        <h2 class="text-white">ContactUs</h2>
+      </div>
+    </router-link>
     <div class="flex flex-col items-center cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
