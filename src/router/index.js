@@ -1,28 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainPage from "./../components/MainPage.vue";
-import Member from "../components/MemberPage.vue";
-import Product from "./../components/ProductPage.vue";
-import Contact from "./../components/ContactUs.vue"
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: MainPage,
+    component: () => import("./../components/MainPage.vue"),
   },
   {
     path: "/members",
     name: "Members",
-    component: Member,
+    component: () => import("../components/MemberPage.vue"),
   },
   {
-    path:"/Product",
-    name:"Product",
-    component:Product,
+    path: "/Product",
+    name: "Product",
+    component: () => import("./../components/ProductPage.vue"),
   },
   {
-    path:"/Contact",
-    name:"Contact",
-    component:Contact,
+    path: "/Contact",
+    name: "Contact",
+    component: () => import("./../components/ContactUs.vue"),
   },
 ];
 
