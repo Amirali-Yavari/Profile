@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    .activeNav{
+        @apply transform -translate-y-2 rounded-full  bg-red-500 scale-125;
+    }
+  }
