@@ -2,7 +2,7 @@
   <div class="h-full w-1/2 relative">
     <div
       @click="ScrollLeft"
-      class="absolute mb-1 bottom-4 left-12 cursor-pointer text-pink-500 font-bold select-none"
+      class="absolute mb-1 animate-bounce bottom-4 left-12 cursor-pointer text-pink-500 font-bold select-none"
     >
       Scroll left
     </div>

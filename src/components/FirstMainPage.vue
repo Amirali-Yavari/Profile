@@ -2,7 +2,7 @@
   <div class="h-[98vh] w-1/2 relative">
     <div
       @click="ScrollRight"
-      class="absolute mb-1 bottom-16 right-10 cursor-pointer text-pink-500 font-bold select-none"
+      class="absolute mb-1 animate-bounce bottom-16 right-10 cursor-pointer text-pink-500 font-bold select-none"
     >
       Scroll Right
     </div>

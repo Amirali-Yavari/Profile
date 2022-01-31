@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full h-16 flex flex-row-reverse justify-between items-center gap-8 fixed bottom-0 bg-white"
+    class="w-full h-16 flex flex-row-reverse justify-between items-center gap-8 fixed bottom-0 bg-white border-t border-gray-300"
   >
     <div
-      class="w-10 h-10 ring-1 ring-gray-300 rounded-md flex items-center justify-center mr-2 cursor-pointer"
+      class="w-10 h-10 ring-1 ring-gray-300 rounded-md flex items-center justify-center mr-2 cursor-pointer shadow-md hover:bg-gray-100  transition"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@
         />
       </svg>
     </div>
-    <div class="text-pink-500 text-3xl ml-2">Yavari</div>
+    <div class="text-pink-500 text-3xl ml-2 font-bold">Yavari</div>
   </div>
 </template>
 <script></script>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[90vh] flex flex-row w-[200vw]"
+    class="h-[90vh] flex flex-row w-[200vw] sm:w-[100vw]"
   > 
     <AboutTeamPage />
     <MainpageRiasat />
