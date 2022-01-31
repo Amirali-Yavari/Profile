@@ -2,7 +2,7 @@
   <div class="h-[98vh] w-1/2 relative">
     <div
       @click="ScrollRight"
-      class="absolute mb-1 bottom-16 right-10 cursor-pointer text-orange-500 font-bold"
+      class="absolute mb-1 bottom-16 right-10 cursor-pointer text-pink-500 font-bold select-none"
     >
       Scroll Right
     </div>
@@ -12,7 +12,6 @@
       <MySummary />
       <ReadMore />
     </div>
-
     <NavbarBottom />
   </div>
 </template>
