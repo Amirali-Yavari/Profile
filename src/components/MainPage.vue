@@ -1,7 +1,7 @@
 <template>
   <div
     class="h-[100vh] flex flex-row w-[200vw] bg-MainBackground bg-no-repeat bg-cover"
-  >
+  > 
     <MainpageRiasat />
     <AboutTeamPage />
   </div>
