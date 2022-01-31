@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full h-12 flex flex-row justify-around bg-gradient-to-t from-violet-400/70 fixed bottom-0 rounded-md"
+    class="w-full h-12 flex flex-row justify-center gap-8 fixed bottom-3 rounded-md"
   >
     <router-link to="/members">
-      <div class="flex flex-col items-center cursor-pointer">
+      <div class="flex flex-col items-center cursor-pointer hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -63,7 +63,7 @@
           aria-hidden="true"
           role="img"
           :class="this.$route.name == 'Home' ? 'activeNav' : ''"
-          class="iconify iconify--carbon text-white "
+          class="iconify iconify--carbon text-white"
           width="28"
           height="28"
           preserveAspectRatio="xMidYMid meet"
@@ -99,7 +99,7 @@
         <h2 class="text-white">ContactUs</h2>
       </div>
     </router-link>
-    <div class="flex flex-col items-center cursor-pointer">
+    <div class="flex flex-col items-center cursor-pointer hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
