@@ -24,11 +24,7 @@ export default {
       });
     },
   },
-  mounted() {
-    setTimeout(() => {
-      this.$store.commit("ShowTrue");
-    }, 300);
-  },
+ 
   components: {},
 };
 </script>
