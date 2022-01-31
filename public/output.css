@@ -431,6 +431,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+  color: white;
 }
 
 *, ::before, ::after {

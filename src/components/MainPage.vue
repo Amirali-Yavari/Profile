@@ -1,14 +1,14 @@
 <template>
   <div
-    class="h-[100vh] flex flex-row w-[200vw] bg-MainBackground bg-no-repeat bg-cover"
+    class="h-[90vh] flex flex-row w-[200vw] bg-MainBackground bg-no-repeat bg-cover"
   > 
-    <MainpageRiasat />
     <AboutTeamPage />
+    <MainpageRiasat />
   </div>
 </template>
 <script>
-import MainpageRiasat from "./MainPage/MainpageRiasat.vue";
-import AboutTeamPage from "./AboutTeamPage.vue";
+import MainpageRiasat from "./MainPage/SecondMainPage.vue";
+import AboutTeamPage from "./FirstMainPage";
 export default {
   components: {
     AboutTeamPage,
