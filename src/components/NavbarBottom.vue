@@ -25,7 +25,7 @@
         />
       </svg>
     </div>
-    <div class="text-pink-500 text-3xl mr-2 font-bold font-logo">Yavari</div>
+    <div class="text-blue-900 text-3xl mr-2 font-bold font-logo select-none">Amirali Yavari</div>
   </div>
 </template>
 <script>
