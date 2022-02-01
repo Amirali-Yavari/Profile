@@ -50,13 +50,13 @@ export default {
 <style>
 .navhide-enter-from,
 .navhide-leave-to {
-  height: 0vh;
+  height: 0rem;
   opacity: 0;
   transition: all 0.5s ease;
 }
 .navhide-enter-to,
 .navhide-leave-from {
-  height: 21vh;
+  height: 9rem;
   opacity: 1;
   transition: all 0.5s ease;
 }
