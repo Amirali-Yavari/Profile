@@ -1,10 +1,10 @@
 <template>
-  <div class="h-screen w-[200vw] flex flex-row">
-    <div class="w-1/2 flex flex-col p-5 gap-1">
+  <div class="h-screen w-full flex">
+    <div class="w-full flex flex-col p-5 gap-1">
       <div class="w-full flex items-center justify-center">
         <img
           src="./../../public/MyImage/vv-min.jpg"
-          class="rounded-full w-2/3"
+          class="rounded-full w-2/3 shadow-md"
           alt=""
         />
       </div>
@@ -19,7 +19,7 @@
           href="https://github.com/shahabbasian/"
           class="text-pink-500"
           target="_blank"
-          >mr.ShahAbbasian</a
+          >Mr.ShahAbbasian</a
         >
         and
         <a href="https://damoon.pro/" target="_blank" class="text-pink-500"
@@ -28,9 +28,6 @@
         they helped me to find my way by the time I liked Front-End and
         Javascript
       </p>
-    </div>
-    <div class="w-1/2 flex flex-col p-5">
-    <h2 class="">Details</h2>
     </div>
     <NavbarBottom />
   </div>
