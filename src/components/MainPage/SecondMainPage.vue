@@ -21,7 +21,7 @@
     </div>
     <img
       src="./../../../public/MyImage/vv-min.jpg"
-      class="object-cover w-full h-full"
+      class="object-cover w-full z-10 h-full"
       alt=""
     />
   </div>
