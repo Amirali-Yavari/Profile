@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Amirali Yavari</title>
-    <script src="https://cdn.tailwindcss.com"></script>    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {      theme: {        extend: {       fontFamily: {      'logo': ['"Segoe Print"']   },           }      }    }
+    </script>    
   </head>
   <!-- bg-[#dfe3e6] -->
   <body class="bg-gray-200">
