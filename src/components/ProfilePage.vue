@@ -1,6 +1,8 @@
 <template>
-  welcome to profile page
-  <NavbarBottom />
+  <div>
+    welcome to profile page
+    <NavbarBottom />
+  </div>
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
