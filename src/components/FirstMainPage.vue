@@ -40,7 +40,15 @@ import MySummary from "./MainPage/MySummary.vue";
 import ReadMore from "./MainPage/ReadMore.vue";
 import NavbarBottom from "./NavbarBottom.vue";
 import MyLogo from "./MainPage/MyLogo.vue";
+// import { onMounted } from "vue";
 export default {
+  // setup() {
+  //   onMounted(() => {
+  //     setTimeout(() => {
+  //       this.$store.commit("ShowTrue");
+  //     }, 300);
+  //   });
+  // },
   mounted() {
     setTimeout(() => {
       this.$store.commit("ShowTrue");

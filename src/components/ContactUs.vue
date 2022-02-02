@@ -117,14 +117,14 @@
       </div>
     </div>
     <NavbarBottom />
+    <transition name="modal">
+      <ModalContact
+        @closebtn="closebtn"
+        :modalValue="modalValue"
+        v-if="showModal"
+      />
+    </transition>
   </div>
-  <transition name="modal">
-    <ModalContact
-      @closebtn="closebtn"
-      :modalValue="modalValue"
-      v-if="showModal"
-    />
-  </transition>
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
