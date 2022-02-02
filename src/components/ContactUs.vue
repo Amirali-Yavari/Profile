@@ -1,6 +1,25 @@
 <template>
   <div class="h-[80vh] w-[200vw] flex flex-row items-center">
-    <div class="w-1/2 flex flex-col p-10 gap-8">
+    <div class="w-1/2 flex flex-col p-10 gap-8 relative">
+      <div
+        @click="ScrollRight"
+        class="absolute mb-1 -bottom-1 right-4 cursor-pointer font-bold select-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 bg-pink-500 rounded-full text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+        </svg>
+      </div>
       <h1 class="text-3xl text-blue-900">Contact Us</h1>
       <p class="text-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
@@ -55,7 +74,26 @@
         </div>
       </div>
     </div>
-    <div class="w-1/2 flex flex-col items-center gap-3">
+    <div class="w-1/2 flex flex-col items-center gap-3 relative">
+      <div
+        @click="ScrollLeft"
+        class="absolute mb-1 -bottom-10 left-4 cursor-pointer text-pink-500 font-bold select-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 bg-pink-500 rounded-full text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </div>
       <input
         type="text"
         placeholder="FullName"
@@ -115,6 +153,20 @@ export default {
     github() {
       this.modalValue = "Github";
       this.showModal = true;
+    },
+    ScrollLeft() {
+      window.scrollTo({
+        top: 0,
+        left: -100000,
+        behavior: "smooth",
+      });
+    },
+    ScrollRight() {
+      window.scrollTo({
+        top: 0,
+        left: 100000,
+        behavior: "smooth",
+      });
     },
   },
   components: {
