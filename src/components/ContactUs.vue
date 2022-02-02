@@ -55,7 +55,29 @@
         </div>
       </div>
     </div>
-    <div class="w-1/2">2</div>
+    <div class="w-1/2 flex flex-col items-center gap-3">
+      <input
+        type="text"
+        placeholder="FullName"
+        class="w-3/4 p-2 ring-1 ring-gray-400 shadow-md"
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        class="w-3/4 p-2 ring-1 ring-gray-400 shadow-md"
+      />
+      <textarea
+        cols="30"
+        rows="10"
+        class="w-3/4 p-2 ring-1 ring-gray-400 shadow-md"
+        placeholder="Message text"
+      ></textarea>
+      <div
+        class="w-1/3 ring-1 ring-blue-900 p-2 text-lg flex items-center justify-center text-blue-900 shadow-lg hover:bg-blue-900 hover:text-white font-semibold cursor-pointer transition"
+      >
+        Send
+      </div>
+    </div>
     <NavbarBottom />
   </div>
   <transition name="modal">
