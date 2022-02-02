@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-screen bg-black/70 gap-2 items-center justify-center flex flex-col shadow-lg shadow-black fixed top-0 left-0"
+    class="w-full h-screen bg-black/70 gap-2 items-center justify-center flex flex-col fixed top-0 left-0"
   >
     <div
       v-if="modalValue == 'Instagram'"

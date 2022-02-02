@@ -58,7 +58,13 @@
     <div class="w-1/2">2</div>
     <NavbarBottom />
   </div>
-  <ModalContact @closebtn="closebtn" :modalValue="modalValue" v-if="showModal" />
+  <transition name="modal">
+    <ModalContact
+      @closebtn="closebtn"
+      :modalValue="modalValue"
+      v-if="showModal"
+    />
+  </transition>
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
@@ -95,3 +101,17 @@ export default {
   },
 };
 </script>
+<style>
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+  transform: scale(0.1) rotateZ(45deg);
+  transition: all 0.5s ease;
+}
+.modal-enter-to,
+.modal-leave-from {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+</style>
