@@ -3,10 +3,14 @@
     <div class="w-1/2 flex flex-col p-10 gap-8">
       <h1 class="text-3xl text-blue-900">Contact Us</h1>
       <p class="text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus explicabo praesentium ratione nam adipisci nobis, eius nesciunt voluptate nihil saepe quibusdam, deserunt ut ad perferendis dolorem pariatur quo minus officia!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+        explicabo praesentium ratione nam adipisci nobis, eius nesciunt
+        voluptate nihil saepe quibusdam, deserunt ut ad perferendis dolorem
+        pariatur quo minus officia!
       </p>
       <div class="grid grid-cols-2 grid-rows-2 gap-2">
         <div
+          @click="instagram"
           class="flex flex-row gap-1 items-center text-lg select-none transform hover:scale-105 transition cursor-pointer shadow-md ring-1 ring-gray-300"
         >
           <img
@@ -17,6 +21,7 @@
           Instagram
         </div>
         <div
+          @click="telegram"
           class="flex flex-row items-center text-lg gap-1 select-none transform hover:scale-105 transition cursor-pointer shadow-md ring-1 ring-gray-300"
         >
           <img
@@ -27,6 +32,7 @@
           Telegram
         </div>
         <div
+          @click="email"
           class="flex flex-row items-center text-lg gap-1 select-none transform hover:scale-105 transition cursor-pointer shadow-md ring-1 ring-gray-300"
         >
           <img
@@ -37,6 +43,7 @@
           Email
         </div>
         <div
+          @click="github"
           class="flex flex-row items-center text-lg gap-1 select-none transform hover:scale-105 transition cursor-pointer shadow-md ring-1 ring-gray-300"
         >
           <img
@@ -51,12 +58,36 @@
     <div class="w-1/2">2</div>
     <NavbarBottom />
   </div>
+  <ModalContact />
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
+import ModalContact from "./ModalContactPage.vue";
 export default {
+  data() {
+    return { modalValue: "", showModal: false };
+  },
+  methods: {
+    instagram() {
+      this.modalValue = "instagram";
+      this.showModal = true;
+    },
+    telegram() {
+      this.modalValue = "telegram";
+      this.showModal = true;
+    },
+    email() {
+      this.modalValue = "email";
+      this.showModal = true;
+    },
+    github() {
+      this.modalValue = "github";
+      this.showModal = true;
+    },
+  },
   components: {
     NavbarBottom,
+    ModalContact,
   },
 };
 </script>
