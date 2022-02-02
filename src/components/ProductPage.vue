@@ -61,7 +61,7 @@
             >
               <div class="w-1/2 p-2">
                 <img
-                  src="./../../public/MyImage/pexels-photo-8718614.jpeg"
+                  src="./../../public/MyImage/pexels-photo-9668543.jpeg"
                   class="h-full w-[90%] object-cover object-top rounded-full shadow-md"
                   alt=""
                 />

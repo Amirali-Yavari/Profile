@@ -1,15 +1,96 @@
 <template>
   <div
-    class="w-3/4 h-1/3 bg-gray-400 gap-2 items-center justify-around flex flex-col shadow-lg shadow-black fixed top-[26%] left-[12%] brightness-75"
+    class="w-full h-screen bg-black/70 gap-2 items-center justify-center flex flex-col shadow-lg shadow-black fixed top-0 left-0"
   >
-    <div class="w-2 h-2 absolute top-1 right-1 text-white text-lg cursor-pointer flex items-center justify-center">X</div>
-    <h3 class="text-3xl text-white">My Instagram</h3>
-    <h2
-      class="text-3xl text-white cursor-pointer ring-1 ring-pink-500 p-3 hover:bg-pink-500 transition rounded-md"
+    <div
+      v-if="modalValue == 'Instagram'"
+      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
-      Amirali_Crl
-    </h2>
-    <p class="text-lg text-white">You can follow me on this page</p>
+      <div
+        @click="closebtn"
+        class="w-6 h-6 bg-pink-600 rounded-full text-white shadow-sm shadow-black flex items-center justify-center absolute -top-2 -right-2 select-none cursor-pointer"
+      >
+        X
+      </div>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <p class="text-center">You can follow me on Instagram</p>
+      <a href="" target="_blank">
+        <div
+          class="text-2xl p-2 text-white bg-pink-500 font-logo cursor-pointer select-none hover:bg-pink-700 ring-1 shadow-md shadow-gray-700 ring-pink-900 rounded-sm transition"
+        >
+          @Amirali_Crl
+        </div>
+      </a>
+    </div>
+    <div
+      v-if="modalValue == 'Telegram'"
+      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+    >
+      <div
+        @click="closebtn"
+        class="w-6 h-6 bg-pink-600 rounded-full text-white shadow-sm shadow-black flex items-center justify-center absolute -top-2 -right-2 select-none cursor-pointer"
+      >
+        X
+      </div>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <p class="text-center">You can send me a message</p>
+      <a href="" target="_blank">
+        <div
+          class="text-2xl p-2 text-white bg-pink-500 font-logo cursor-pointer select-none hover:bg-pink-700 ring-1 shadow-md shadow-gray-700 ring-pink-900 rounded-sm transition"
+        >
+          @Amirali_Crl
+        </div>
+      </a>
+    </div>
+    <div
+      v-if="modalValue == 'Email'"
+      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+    >
+      <div
+        @click="closebtn"
+        class="w-6 h-6 bg-pink-600 rounded-full text-white shadow-sm shadow-black flex items-center justify-center absolute -top-2 -right-2 select-none cursor-pointer"
+      >
+        X
+      </div>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <p class="text-center">You can send me a email</p>
+      <a href="" target="_blank">
+        <div
+          class="text-sm p-2 text-white bg-pink-500 font-logo cursor-pointer select-none hover:bg-pink-700 ring-1 shadow-md shadow-gray-700 ring-pink-900 rounded-sm transition"
+        >
+          Amiraliyavari785@gmail.com
+        </div>
+      </a>
+    </div>
+    <div
+      v-if="modalValue == 'Github'"
+      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+    >
+      <div
+        @click="closebtn"
+        class="w-6 h-6 bg-pink-600 rounded-full text-white shadow-sm shadow-black flex items-center justify-center absolute -top-2 -right-2 select-none cursor-pointer"
+      >
+        X
+      </div>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <p class="text-center">You can see my project in github</p>
+      <a href="https://github.com/Amirali-Yavari">
+        <div
+          class="text-2xl p-2 text-white bg-pink-500 font-logo cursor-pointer select-none hover:bg-pink-700 ring-1 shadow-md shadow-gray-700 ring-pink-900 rounded-sm transition"
+        >
+          Amirali-Yavari
+        </div>
+      </a>
+    </div>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+  props: ["modalValue"],
+  methods: {
+    closebtn() {
+      this.$emit("closebtn");
+    },
+  },
+};
+</script>

@@ -58,7 +58,7 @@
     <div class="w-1/2">2</div>
     <NavbarBottom />
   </div>
-  <ModalContact />
+  <ModalContact @closebtn="closebtn" :modalValue="modalValue" v-if="showModal" />
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
@@ -68,20 +68,24 @@ export default {
     return { modalValue: "", showModal: false };
   },
   methods: {
+    closebtn() {
+      this.modalValue = "";
+      this.showModal = false;
+    },
     instagram() {
-      this.modalValue = "instagram";
+      this.modalValue = "Instagram";
       this.showModal = true;
     },
     telegram() {
-      this.modalValue = "telegram";
+      this.modalValue = "Telegram";
       this.showModal = true;
     },
     email() {
-      this.modalValue = "email";
+      this.modalValue = "Email";
       this.showModal = true;
     },
     github() {
-      this.modalValue = "github";
+      this.modalValue = "Github";
       this.showModal = true;
     },
   },
