@@ -8,6 +8,7 @@
   >
     <div
       @click="ShowNavHide"
+      ref="target"
       class="w-10 h-10 ring-1 ring-gray-300 rounded-md flex items-center justify-center ml-2 cursor-pointer shadow-md hover:bg-gray-100 transition"
     >
       <svg
@@ -33,6 +34,7 @@
 <script>
 import NavHide from "./NavHide.vue";
 import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
 export default {
   setup() {
     //data
@@ -42,7 +44,13 @@ export default {
       show.value = !show.value;
       setTimeout(() => (show.value = false), 20000);
     }
+    //click out side
+    const target = ref(null);
+    onClickOutside(target, () => {
+      show.value = false;
+    });
     return {
+      target,
       show,
       ShowNavHide,
     };
