@@ -73,7 +73,7 @@
                   My Profilo Site
                 </h3>
                 <p class="h-2/3 text-justify">
-                  I make it for my own to i put my ended project into it 
+                  I make it for my own to i put my ended project into it
                 </p>
               </div>
             </div>
@@ -90,17 +90,23 @@
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
+import { onMounted, ref } from "vue";
+import { useTitle } from "@vueuse/core";
 export default {
-  mounted() {
-    setTimeout(() => (this.show = true), 300);
+  setup() {
+    //change title
+    const title = useTitle();
+    title.value = "Product";
+    //data
+    let show = ref(false);
+    //Hooks
+    onMounted(() => {
+      setTimeout(() => (show.value = true), 300);
+    });
+    return { show };
   },
   components: {
     NavbarBottom,
-  },
-  data() {
-    return {
-      show: false,
-    };
   },
 };
 </script>
