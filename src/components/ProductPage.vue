@@ -1,6 +1,12 @@
 <template>
   <div class="flex flex-col h-screen">
-    <div class="h-[87%]">
+    <div class="h-[87%] relative">
+      <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
+        status :
+        <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
+          online === true ? "Online" : "Offline"
+        }}</span>
+      </div>
       <h1 class="text-center text-3xl mt-2 text-blue-800">Products</h1>
       <div class="grid grid-cols-1 mt-3 gap-4 p-3">
         <transition name="first">
@@ -92,8 +98,11 @@
 import NavbarBottom from "./NavbarBottom.vue";
 import { onMounted, ref } from "vue";
 import { useTitle } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    const online = useOnline();
     //change title
     const title = useTitle();
     title.value = "Product";
@@ -103,7 +112,7 @@ export default {
     onMounted(() => {
       setTimeout(() => (show.value = true), 300);
     });
-    return { show };
+    return { show, online };
   },
   components: {
     NavbarBottom,

@@ -1,5 +1,11 @@
 <template>
-  <div class="h-[80vh] w-[200vw] flex flex-row items-center">
+  <div class="h-[80vh] w-[200vw] flex flex-row items-center relative">
+    <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
+      status :
+      <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
+        online === true ? "Online" : "Offline"
+      }}</span>
+    </div>
     <div class="w-1/2 flex flex-col p-10 gap-8 relative">
       <div
         @click="ScrollRight"
@@ -95,6 +101,7 @@
         </svg>
       </div>
       <input
+        ref="input"
         type="text"
         placeholder="FullName"
         class="w-3/4 p-2 ring-1 ring-gray-400 shadow-md"
@@ -132,8 +139,25 @@ import ModalContact from "./ModalContactPage.vue";
 import { useTitle } from "@vueuse/core";
 import { ref } from "vue";
 import { onKeyStroke } from "@vueuse/core";
+import { onStartTyping } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    let online = useOnline();
+
+    //start typing
+    const input = ref(null);
+    onStartTyping(() => {
+      if (!input.value.active) {
+        input.value.focus();
+        window.scrollTo({
+          top: 0,
+          left: 100000,
+          behavior: "smooth",
+        });
+      }
+    });
     //use arrow key
     onKeyStroke("ArrowRight", () => {
       window.scrollTo({
@@ -199,6 +223,7 @@ export default {
     return {
       modalValue,
       showModal,
+      input,
       closebtn,
       instagram,
       telegram,
@@ -206,6 +231,7 @@ export default {
       github,
       ScrollLeft,
       ScrollRight,
+      online,
     };
   },
   components: {
