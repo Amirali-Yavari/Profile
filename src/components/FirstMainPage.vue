@@ -22,13 +22,13 @@
     <div class="p-10 flex flex-col gap-8">
       <MyLogo />
       <transition name="title">
-        <MyTitle v-if="this.$store.state.show" />
+        <MyTitle v-if="ShowTrue" />
       </transition>
       <transition name="summary">
-        <MySummary v-if="this.$store.state.show" />
+        <MySummary v-if="ShowTrue" />
       </transition>
       <transition name="read">
-        <ReadMore v-if="this.$store.state.show" />
+        <ReadMore v-if="ShowTrue" />
       </transition>
     </div>
     <NavbarBottom />
@@ -40,28 +40,33 @@ import MySummary from "./MainPage/MySummary.vue";
 import ReadMore from "./MainPage/ReadMore.vue";
 import NavbarBottom from "./NavbarBottom.vue";
 import MyLogo from "./MainPage/MyLogo.vue";
-// import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import { useTitle } from "@vueuse/core";
 export default {
-  // setup() {
-  //   onMounted(() => {
-  //     setTimeout(() => {
-  //       this.$store.commit("ShowTrue");
-  //     }, 300);
-  //   });
-  // },
-  mounted() {
-    setTimeout(() => {
-      this.$store.commit("ShowTrue");
-    }, 300);
-  },
-  methods: {
-    ScrollRight() {
+  setup() {
+    //change title
+    const title = useTitle();
+    title.value = "Amirali Yavari";
+    //data
+    let ShowTrue = ref(false);
+    //Hooks
+    onMounted(() => {
+      setTimeout(() => {
+        ShowTrue.value = true;
+      }, 300);
+    });
+    //Functions
+    function ScrollRight() {
       window.scrollTo({
         top: 0,
         left: 100000,
         behavior: "smooth",
       });
-    },
+    }
+    return {
+      ShowTrue,
+      ScrollRight,
+    };
   },
   components: {
     MyTitle,
