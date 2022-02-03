@@ -25,21 +25,26 @@
         />
       </svg>
     </div>
-    <div class="text-blue-900 text-3xl mr-2 font-bold font-logo select-none">Amirali Yavari</div>
+    <div class="text-blue-900 text-3xl mr-2 font-bold font-logo select-none">
+      Amirali Yavari
+    </div>
   </div>
 </template>
 <script>
 import NavHide from "./NavHide.vue";
+import { ref } from "vue";
 export default {
-  methods: {
-    ShowNavHide() {
-      this.show = !this.show;
-      setTimeout(() => (this.show = false), 20000);
-    },
-  },
-  data() {
+  setup() {
+    //data
+    let show = ref(false);
+    //functions
+    function ShowNavHide() {
+      show.value = !show.value;
+      setTimeout(() => (show.value = false), 20000);
+    }
     return {
-      show: false,
+      show,
+      ShowNavHide,
     };
   },
   components: {
