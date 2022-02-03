@@ -131,8 +131,24 @@ import NavbarBottom from "./NavbarBottom.vue";
 import ModalContact from "./ModalContactPage.vue";
 import { useTitle } from "@vueuse/core";
 import { ref } from "vue";
+import { onKeyStroke } from "@vueuse/core";
 export default {
   setup() {
+    //use arrow key
+    onKeyStroke("ArrowRight", () => {
+      window.scrollTo({
+        top: 0,
+        left: 100000,
+        behavior: "smooth",
+      });
+    });
+    onKeyStroke("ArrowLeft", () => {
+      window.scrollTo({
+        top: 0,
+        left: -100000,
+        behavior: "smooth",
+      });
+    });
     // Change Title
     const title = useTitle();
     title.value = "Contact Us";
@@ -173,7 +189,7 @@ export default {
       });
     }
     //---------------------------
-    function ScrollRight(){
+    function ScrollRight() {
       window.scrollTo({
         top: 0,
         left: 100000,
