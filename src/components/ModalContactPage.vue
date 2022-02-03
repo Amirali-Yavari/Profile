@@ -3,6 +3,7 @@
     class="w-full h-screen bg-black/70 gap-2 items-center justify-center flex flex-col fixed top-0 left-0"
   >
     <div
+      ref="target"
       v-if="modalValue == 'Instagram'"
       class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
@@ -12,7 +13,7 @@
       >
         X
       </div>
-      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue1 }}</h2>
       <p class="text-center">You can follow me on Instagram</p>
       <a href="" target="_blank">
         <div
@@ -23,6 +24,7 @@
       </a>
     </div>
     <div
+      ref="target"
       v-if="modalValue == 'Telegram'"
       class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
@@ -32,7 +34,7 @@
       >
         X
       </div>
-      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue1 }}</h2>
       <p class="text-center">You can send me a message</p>
       <a href="" target="_blank">
         <div
@@ -43,6 +45,7 @@
       </a>
     </div>
     <div
+      ref="target"
       v-if="modalValue == 'Email'"
       class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
@@ -52,7 +55,7 @@
       >
         X
       </div>
-      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue1 }}</h2>
       <p class="text-center">You can send me a email</p>
       <a href="" target="_blank">
         <div
@@ -63,6 +66,7 @@
       </a>
     </div>
     <div
+      ref="target"
       v-if="modalValue == 'Github'"
       class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
@@ -72,7 +76,7 @@
       >
         X
       </div>
-      <h2 class="text-2xl text-blue-900">My {{ modalValue }}</h2>
+      <h2 class="text-2xl text-blue-900">My {{ modalValue1 }}</h2>
       <p class="text-center">You can see my project in github</p>
       <a href="https://github.com/Amirali-Yavari">
         <div
@@ -85,12 +89,27 @@
   </div>
 </template>
 <script>
+import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
 export default {
   props: ["modalValue"],
-  methods: {
-    closebtn() {
-      this.$emit("closebtn");
-    },
+  setup(props, context) {
+    //data
+    const target = ref(null);
+    //close outside click
+    onClickOutside(target, () => {
+      context.emit("closebtn");
+    });
+    let modalValue1 = ref(props.modalValue);
+    //function
+    function closebtn() {
+      context.emit("closebtn");
+    }
+    return {
+      modalValue1,
+      closebtn,
+      target,
+    };
   },
 };
 </script>
