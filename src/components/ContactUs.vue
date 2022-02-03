@@ -129,45 +129,68 @@
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
 import ModalContact from "./ModalContactPage.vue";
+import { useTitle } from "@vueuse/core";
+import { ref } from "vue";
 export default {
-  data() {
-    return { modalValue: "", showModal: false };
-  },
-  methods: {
-    closebtn() {
-      this.modalValue = "";
-      this.showModal = false;
-    },
-    instagram() {
-      this.modalValue = "Instagram";
-      this.showModal = true;
-    },
-    telegram() {
-      this.modalValue = "Telegram";
-      this.showModal = true;
-    },
-    email() {
-      this.modalValue = "Email";
-      this.showModal = true;
-    },
-    github() {
-      this.modalValue = "Github";
-      this.showModal = true;
-    },
-    ScrollLeft() {
+  setup() {
+    // Change Title
+    const title = useTitle();
+    title.value = "Contact Us";
+    // data
+    let modalValue = ref("");
+    let showModal = ref(false);
+    //Functions
+    function closebtn() {
+      modalValue.value = "";
+      showModal.value = false;
+    }
+    //---------------------------
+    function instagram() {
+      modalValue.value = "Instagram";
+      showModal.value = true;
+    }
+    //---------------------------
+    function telegram() {
+      modalValue.value = "Telegram";
+      showModal.value = true;
+    }
+    //---------------------------
+    function email() {
+      modalValue.value = "Email";
+      showModal.value = true;
+    }
+    //---------------------------
+    function github() {
+      modalValue.value = "Github";
+      showModal.value = true;
+    }
+    //---------------------------
+    function ScrollLeft() {
       window.scrollTo({
         top: 0,
         left: -100000,
         behavior: "smooth",
       });
-    },
-    ScrollRight() {
+    }
+    //---------------------------
+    function ScrollRight(){
       window.scrollTo({
         top: 0,
         left: 100000,
         behavior: "smooth",
       });
-    },
+    }
+    return {
+      modalValue,
+      showModal,
+      closebtn,
+      instagram,
+      telegram,
+      email,
+      github,
+      ScrollLeft,
+      ScrollRight,
+    };
   },
   components: {
     NavbarBottom,
