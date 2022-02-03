@@ -42,8 +42,17 @@ import NavbarBottom from "./NavbarBottom.vue";
 import MyLogo from "./MainPage/MyLogo.vue";
 import { onMounted, ref } from "vue";
 import { useTitle } from "@vueuse/core";
+import { onKeyStroke } from "@vueuse/core";
 export default {
   setup() {
+    //use arrow key for going to second page
+    onKeyStroke("ArrowRight", () => {
+      window.scrollTo({
+        top: 0,
+        left: 100000,
+        behavior: "smooth",
+      });
+    });
     //change title
     const title = useTitle();
     title.value = "Amirali Yavari";
