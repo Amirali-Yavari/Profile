@@ -34,7 +34,13 @@
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
+import { useTitle } from "@vueuse/core";
 export default {
+  setup(){
+    // change title
+    const title =useTitle()
+    title.value='Profile'
+  },
   components: {
     NavbarBottom,
   },
