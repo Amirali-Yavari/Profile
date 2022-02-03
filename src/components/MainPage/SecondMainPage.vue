@@ -27,8 +27,18 @@
   </div>
 </template>
 <script>
+import { onKeyStroke } from "@vueuse/core";
 export default {
   setup() {
+    //use arrow key for going to first page
+    onKeyStroke("ArrowLeft", () => {
+      window.scrollTo({
+        top: 0,
+        left: -100000,
+        behavior: "smooth",
+      });
+    });
+    //functions
     function ScrollLeft() {
       window.scrollTo({
         top: 0,
