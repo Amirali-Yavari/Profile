@@ -1,5 +1,11 @@
 <template>
-  <div class="h-screen w-full flex">
+  <div class="h-screen w-full flex relative">
+    <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
+      status :
+      <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
+        online === true ? "Online" : "Offline"
+      }}</span>
+    </div>
     <div class="w-full flex flex-col p-5 gap-1">
       <div class="w-full flex items-center justify-center">
         <img
@@ -35,11 +41,15 @@
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
 import { useTitle } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    const online = useOnline();
     // change title
     const title = useTitle();
     title.value = "Profile";
+    return { online };
   },
   components: {
     NavbarBottom,

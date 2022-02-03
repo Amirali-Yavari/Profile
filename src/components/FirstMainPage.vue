@@ -1,5 +1,11 @@
 <template>
   <div class="h-[90vh] w-1/2 relative flex">
+    <div class="fixed z-10 top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
+      status :
+      <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
+        online === true ? "Online" : "Offline"
+      }}</span>
+    </div>
     <div
       @click="ScrollRight"
       class="absolute mb-1 animate-bounce bottom-0 right-4 cursor-pointer font-bold select-none"
@@ -43,8 +49,11 @@ import MyLogo from "./MainPage/MyLogo.vue";
 import { onMounted, ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    const online = useOnline();
     //use arrow key for going to second page
     onKeyStroke("ArrowRight", () => {
       window.scrollTo({
@@ -75,6 +84,7 @@ export default {
     return {
       ShowTrue,
       ScrollRight,
+      online,
     };
   },
   components: {
