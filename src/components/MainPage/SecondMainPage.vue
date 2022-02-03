@@ -28,16 +28,16 @@
 </template>
 <script>
 export default {
-  methods: {
-    ScrollLeft() {
+  setup() {
+    function ScrollLeft() {
       window.scrollTo({
         top: 0,
         left: -100000,
         behavior: "smooth",
       });
-    },
+    }
+    return { ScrollLeft };
   },
-
   components: {},
 };
 </script>
