@@ -1,6 +1,10 @@
 <template>
   <div class="flex flex-col items-center h-screen">
-    <div class="md:w-1/2 relative">
+    <div
+      class="w-full gap-8 relative flex flex-col items-center justify-center p-5"
+    >
+      <div @click="next" class="absolute bottom-0 right-10">next project</div>
+      <div class="absolute bottom-0 left-10">prev project</div>
       <div
         class="fixed top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
       >
@@ -8,8 +12,58 @@
           online === true ? "Online" : "Offline"
         }}</span>
       </div>
-      <h1 class="text-center text-3xl mt-2 text-blue-800">Products</h1>
-      <div class="grid grid-cols-1 mt-3 gap-4 p-3">
+      <h1 class="text-center md:text-5xl text-3xl mt-2 text-blue-800">
+        Products
+      </h1>
+      <div
+        v-if="show === 1"
+        class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
+      >
+        <img
+          src="./../../public/MyImage/pexels-photo-9668543.jpeg"
+          class="h-1/2 w-full object-cover object-center shadow-md"
+          alt=""
+        />
+        <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
+          Todo list
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
+          voluptatum deserunt optio nobis cumque omnis error esse corrupti
+          blanditiis numquam consectetur, maiores mollitia a, libero soluta
+          quis! Possimus, modi quo?
+        </p>
+        <div
+          class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
+        >
+          Read more
+        </div>
+      </div>
+      <div
+        v-if="show === 2"
+        class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
+      >
+        <img
+          src="./../../public/MyImage/pexels-photo-9668543.jpeg"
+          class="h-1/2 w-full object-cover object-center shadow-md"
+          alt=""
+        />
+        <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
+          DaalShop
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
+          voluptatum deserunt optio nobis cumque omnis error esse corrupti
+          blanditiis numquam consectetur, maiores mollitia a, libero soluta
+          quis! Possimus, modi quo?
+        </p>
+        <div
+          class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
+        >
+          Read more
+        </div>
+      </div>
+      <!-- <div class="grid grid-cols-1 mt-3 gap-4 p-3">
         <transition name="first">
           <div
             v-if="show"
@@ -86,18 +140,14 @@
             </div>
           </div>
         </transition>
-        <!-- <transition name="fourth">
-        <div v-if="show" class="bg-teal-200 h-[25vh]">2</div>
-      </transition> -->
-      </div>
+      </div>-->
     </div>
-
     <NavbarBottom />
   </div>
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { useOnline } from "@vueuse/core";
 export default {
@@ -108,12 +158,12 @@ export default {
     const title = useTitle();
     title.value = "Product";
     //data
-    let show = ref(false);
-    //Hooks
-    onMounted(() => {
-      setTimeout(() => (show.value = true), 300);
-    });
-    return { show, online };
+    let show = ref(1);
+    //function
+    function next() {
+      show.value = 2;
+    }
+    return { next, show, online };
   },
   components: {
     NavbarBottom,
