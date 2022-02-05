@@ -245,7 +245,7 @@ export default {
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
-  transform: scale(0.1) rotateZ(45deg);
+  transform: scale(0.1);
   transition: all 0.5s ease;
 }
 .modal-enter-to,

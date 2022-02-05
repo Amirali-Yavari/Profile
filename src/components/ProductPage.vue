@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col h-screen">
-    <div class="h-[87%] relative">
+  <div class="flex flex-col items-center h-screen">
+    <div class="h-[87%] md:w-1/2 relative">
       <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
         <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
           online === true ? "Online" : "Offline"
@@ -16,7 +16,7 @@
             <div class="w-1/2 p-2">
               <img
                 src="./../../public/MyImage/69b13e8c2b404332afd6a9dae866332e.png"
-                class="h-full w-[90%] object-cover object-top rounded-full shadow-md"
+                class="h-full w-[90%] object-cover object-center rounded-full shadow-md"
                 alt=""
               />
             </div>

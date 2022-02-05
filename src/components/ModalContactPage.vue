@@ -5,7 +5,7 @@
     <div
       ref="target"
       v-if="modalValue == 'Instagram'"
-      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+      class="bg-white w-2/3 md:w-1/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
       <div
         @click="closebtn"
@@ -26,7 +26,7 @@
     <div
       ref="target"
       v-if="modalValue == 'Telegram'"
-      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+      class="bg-white w-2/3 md:w-1/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
       <div
         @click="closebtn"
@@ -47,7 +47,7 @@
     <div
       ref="target"
       v-if="modalValue == 'Email'"
-      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+      class="bg-white w-2/3 md:w-1/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
       <div
         @click="closebtn"
@@ -68,7 +68,7 @@
     <div
       ref="target"
       v-if="modalValue == 'Github'"
-      class="bg-white w-2/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
+      class="bg-white w-2/3 md:w-1/3 shadow-md shadow-black h-1/3 flex flex-col items-center gap-3 p-5 relative"
     >
       <div
         @click="closebtn"
