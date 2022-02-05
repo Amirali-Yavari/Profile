@@ -112,6 +112,7 @@ import NavbarBottom from "./NavbarBottom.vue";
 import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { useOnline } from "@vueuse/core";
+import { onKeyStroke } from "@vueuse/core";
 export default {
   setup() {
     //online status
@@ -148,7 +149,33 @@ export default {
           break;
       }
     }
-    
+    //onKey
+    onKeyStroke("ArrowRight", () => {
+      switch (show.value) {
+        case 1:
+          show.value = 2;
+          break;
+        case 2:
+          show.value = 3;
+          break;
+        case 3:
+          show.value = 1;
+          break;
+      }
+    });
+    onKeyStroke("ArrowLeft", () => {
+      switch (show.value) {
+        case 1:
+          show.value = 3;
+          break;
+        case 2:
+          show.value = 1;
+          break;
+        case 3:
+          show.value = 2;
+          break;
+      }
+    });
     return { prev, next, show, online };
   },
   components: {
@@ -159,7 +186,7 @@ export default {
 <style>
 .first-enter-from {
   opacity: 0;
-  transform: translateY(-50%);
+  transform: translateY(-50px);
   transition: all 1s ease;
 }
 .first-enter-to {
