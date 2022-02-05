@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen w-full flex relative">
+  <div class="h-screen w-full flex">
     <div
-      class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
+      class="fixed top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
     >
       <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
         online === true ? "Online" : "Offline"
@@ -10,31 +10,34 @@
     <div class="w-full flex flex-col p-5 gap-1">
       <div class="w-full flex items-center justify-center">
         <img
-          src="./../../public/MyImage/vv-min.jpg"
-          class="rounded-full w-2/3 sm:w-1/3 md:w-2/5 shadow-md"
+          src="./../../public/MyImage/person_3-removebg-preview.png"
+          class="rounded-full w-2/3 sm:w-1/3 md:fixed md:h-full md:right-0 md:top-0 md:rounded-none md:w-2/4 shadow-md md:shadow-none md:object-cover md:object-top"
           alt=""
         />
       </div>
-
-      <h1 class="text-3xl md:text-5xl text-left text-blue-900">Profile</h1>
-      <p class="text-lg md:text-2xl">Im a Front-End Developer and Designer</p>
-      <h2 class="text-3xl md:text-3xl text-blue-900 mt-5">About Me</h2>
-      <p class="text-lg md:text-2xl mt-2">
-        At first i programed the Windows application with C# then i know the PHP
-        and i liked Back-End on thats time i meet
-        <a
-          href="https://github.com/shahabbasian/"
-          class="text-pink-500"
-          target="_blank"
-          >Mr.ShahAbbasian</a
-        >
-        and
-        <a href="https://damoon.pro/" target="_blank" class="text-pink-500"
-          >Damoon</a
-        >
-        they helped me to find my way by the time I liked Front-End and
-        Javascript
-      </p>
+      <div class="md:w-2/4 w-full mt-2">
+        <h1 class="text-3xl md:text-5xl text-left text-blue-900">Profile</h1>
+        <p class="text-lg md:text-2xl md:mt-3">
+          Im a Front-End Developer and Designer
+        </p>
+        <h2 class="text-3xl md:text-3xl text-blue-900 mt-5">About Me</h2>
+        <p class="text-lg md:text-2xl mt-2">
+          At first i programed the Windows application with C# then i know the
+          PHP and i liked Back-End on thats time i meet
+          <a
+            href="https://github.com/shahabbasian/"
+            class="text-pink-500"
+            target="_blank"
+            >Mr.ShahAbbasian</a
+          >
+          and
+          <a href="https://damoon.pro/" target="_blank" class="text-pink-500"
+            >Damoon</a
+          >
+          they helped me to find my way by the time I liked Front-End and
+          Javascript
+        </p>
+      </div>
     </div>
     <NavbarBottom />
   </div>
