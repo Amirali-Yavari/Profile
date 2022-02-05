@@ -4,7 +4,7 @@
       class="w-full gap-8 relative flex flex-col items-center justify-center p-5"
     >
       <div @click="next" class="absolute bottom-0 right-10">next project</div>
-      <div class="absolute bottom-0 left-10">prev project</div>
+      <div @click="prev" class="absolute bottom-0 left-10">prev project</div>
       <div
         class="fixed top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
       >
@@ -15,54 +15,59 @@
       <h1 class="text-center md:text-5xl text-3xl mt-2 text-blue-800">
         Products
       </h1>
-      <div
-        v-if="show === 1"
-        class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
-      >
-        <img
-          src="./../../public/MyImage/pexels-photo-9668543.jpeg"
-          class="h-1/2 w-full object-cover object-center shadow-md"
-          alt=""
-        />
-        <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
-          Todo list
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-          voluptatum deserunt optio nobis cumque omnis error esse corrupti
-          blanditiis numquam consectetur, maiores mollitia a, libero soluta
-          quis! Possimus, modi quo?
-        </p>
+      <transition name="first" mode="out-in">
         <div
-          class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
+          v-if="show === 1"
+          class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
         >
-          Read more
+          <img
+            src="./../../public/MyImage/pexels-photo-9668543.jpeg"
+            class="h-1/2 w-full object-cover object-center shadow-md"
+            alt=""
+          />
+          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
+            Todo list
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
+            voluptatum deserunt optio nobis cumque omnis error esse corrupti
+            blanditiis numquam consectetur, maiores mollitia a, libero soluta
+            quis! Possimus, modi quo?
+          </p>
+          <div
+            class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
+          >
+            Read more
+          </div>
         </div>
-      </div>
-      <div
-        v-if="show === 2"
-        class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
+      </transition>
+      <transition name="first"
+        ><div
+          v-if="show === 2"
+          class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
+        >
+          <img
+            src="./../../public/MyImage/pexels-photo-9668543.jpeg"
+            class="h-1/2 w-full object-cover object-center shadow-md"
+            alt=""
+          />
+          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
+            DaalShop
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
+            voluptatum deserunt optio nobis cumque omnis error esse corrupti
+            blanditiis numquam consectetur, maiores mollitia a, libero soluta
+            quis! Possimus, modi quo?
+          </p>
+          <div
+            class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
+          >
+            Read more
+          </div>
+        </div></transition
       >
-        <img
-          src="./../../public/MyImage/pexels-photo-9668543.jpeg"
-          class="h-1/2 w-full object-cover object-center shadow-md"
-          alt=""
-        />
-        <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
-          DaalShop
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-          voluptatum deserunt optio nobis cumque omnis error esse corrupti
-          blanditiis numquam consectetur, maiores mollitia a, libero soluta
-          quis! Possimus, modi quo?
-        </p>
-        <div
-          class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
-        >
-          Read more
-        </div>
-      </div>
+
       <!-- <div class="grid grid-cols-1 mt-3 gap-4 p-3">
         <transition name="first">
           <div
@@ -163,7 +168,10 @@ export default {
     function next() {
       show.value = 2;
     }
-    return { next, show, online };
+    function prev() {
+      show.value = 1;
+    }
+    return { prev, next, show, online };
   },
   components: {
     NavbarBottom,
@@ -172,12 +180,12 @@ export default {
 </script>
 <style>
 .first-enter-from {
-  transform: translateY(100px);
+  transform: translateX(-100px);
   opacity: 0;
   transition: all 0.5s ease;
 }
 .first-enter-to {
-  transform: translateY(0px);
+  transform: translateX(0px);
   opacity: 1;
   transition: all 0.5s ease;
 }
