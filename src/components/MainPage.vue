@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[90vh] flex flex-row w-[200vw] bg-gray-200">
+  <div class="h-[90vh] flex flex-row w-[200vw] sm:w-[100vw] bg-gray-200">
     <AboutTeamPage />
     <MainpageRiasat />
   </div>

@@ -2,7 +2,7 @@
   <div class="w-1/2 relative">
     <div
       @click="ScrollLeft"
-      class="absolute mb-1 animate-bounce bottom-0 left-4 cursor-pointer text-pink-500 font-bold select-none"
+      class="absolute mb-1 sm:hidden animate-bounce bottom-0 left-4 cursor-pointer text-pink-500 font-bold select-none"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

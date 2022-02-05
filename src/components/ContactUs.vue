@@ -1,5 +1,7 @@
 <template>
-  <div class="h-[80vh] w-[200vw] flex flex-row items-center relative">
+  <div
+    class="h-[80vh] w-[200vw] sm:w-[100vw] flex flex-row items-center relative"
+  >
     <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
       <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
         online === true ? "Online" : "Offline"
@@ -8,7 +10,7 @@
     <div class="w-1/2 flex flex-col p-10 gap-8 relative">
       <div
         @click="ScrollRight"
-        class="absolute mb-1 -bottom-1 right-4 cursor-pointer font-bold select-none"
+        class="absolute mb-1 sm:hidden -bottom-1 right-4 cursor-pointer font-bold select-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +84,7 @@
     <div class="w-1/2 flex flex-col items-center gap-3 relative">
       <div
         @click="ScrollLeft"
-        class="absolute mb-1 -bottom-10 left-4 cursor-pointer text-pink-500 font-bold select-none"
+        class="absolute mb-1 sm:hidden -bottom-10 left-4 cursor-pointer text-pink-500 font-bold select-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
