@@ -20,7 +20,7 @@
       </svg>
     </div>
     <img
-      src="./../../../public/MyImage/vv-min.jpg"
+      src="./../../../public/MyImage/vv-min-removebg.png"
       class="object-cover w-full z-10 h-full"
       alt=""
     />

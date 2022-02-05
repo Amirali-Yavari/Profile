@@ -42,7 +42,6 @@ export default {
     //functions
     function ShowNavHide() {
       show.value = !show.value;
-      setTimeout(() => (show.value = false), 20000);
     }
     //click out side
     const target = ref(null);

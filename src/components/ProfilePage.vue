@@ -9,15 +9,15 @@
       <div class="w-full flex items-center justify-center">
         <img
           src="./../../public/MyImage/vv-min.jpg"
-          class="rounded-full w-2/3 shadow-md"
+          class="rounded-full w-2/3 sm:w-1/3 md:w-2/5 shadow-md"
           alt=""
         />
       </div>
 
-      <h1 class="text-3xl text-left text-blue-900">Profile</h1>
-      <p class="text-lg">Im a Front-End Developer and Designer</p>
-      <h2 class="text-2xl text-blue-900 mt-5">About Me</h2>
-      <p class="text-lg mt-2">
+      <h1 class="text-3xl md:text-5xl text-left text-blue-900">Profile</h1>
+      <p class="text-lg md:text-2xl">Im a Front-End Developer and Designer</p>
+      <h2 class="text-3xl md:text-3xl text-blue-900 mt-5">About Me</h2>
+      <p class="text-lg md:text-2xl mt-2">
         At first i programed the Windows application with C# then i know the PHP
         and i liked Back-End on thats time i meet
         <a
