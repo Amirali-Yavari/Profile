@@ -1,7 +1,6 @@
 <template>
   <div class="h-screen w-full flex relative">
     <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
-      status :
       <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
         online === true ? "Online" : "Offline"
       }}</span>

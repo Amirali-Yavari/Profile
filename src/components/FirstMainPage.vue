@@ -1,7 +1,6 @@
 <template>
   <div class="h-[90vh] w-1/2 relative flex">
     <div class="fixed z-10 top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
-      status :
       <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
         online === true ? "Online" : "Offline"
       }}</span>
