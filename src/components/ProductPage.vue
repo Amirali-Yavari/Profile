@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col items-center h-screen">
-    <div class="h-[87%] md:w-1/2 relative">
-      <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
+    <div class="md:w-1/2 relative">
+      <div
+        class="fixed top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
+      >
         <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
           online === true ? "Online" : "Offline"
         }}</span>
@@ -11,7 +13,7 @@
         <transition name="first">
           <div
             v-if="show"
-            class="shadow-md ring-1 ring-gray-300 h-[24vh] flex flex-row cursor-pointer"
+            class="shadow-md ring-1 ring-gray-300 h-[20vh] flex flex-row cursor-pointer"
           >
             <div class="w-1/2 p-2">
               <img
@@ -33,10 +35,10 @@
           </div>
         </transition>
         <transition name="second">
-          <div v-if="show" class="h-[24vh]">
+          <div v-if="show" class="h-[20vh]">
             <div
               v-if="show"
-              class="shadow-md ring-1 ring-gray-300 h-[24vh] flex flex-row cursor-pointer"
+              class="shadow-md ring-1 ring-gray-300 h-[20vh] flex flex-row cursor-pointer"
             >
               <div class="w-1/2 p-2">
                 <img
@@ -59,10 +61,10 @@
           </div>
         </transition>
         <transition name="third">
-          <div v-if="show" class="h-[25vh]">
+          <div v-if="show" class="h-[20vh]">
             <div
               v-if="show"
-              class="shadow-md ring-1 ring-gray-300 h-[24vh] flex flex-row cursor-pointer"
+              class="shadow-md ring-1 ring-gray-300 h-[20vh] flex flex-row cursor-pointer"
             >
               <div class="w-1/2 p-2">
                 <img

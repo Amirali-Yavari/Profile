@@ -2,7 +2,9 @@
   <div
     class="h-[80vh] w-[200vw] sm:w-[100vw] flex flex-row items-center relative"
   >
-    <div class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md">
+    <div
+      class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
+    >
       <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
         online === true ? "Online" : "Offline"
       }}</span>
