@@ -1,12 +1,5 @@
 <template>
   <div class="h-screen w-full flex">
-    <div
-      class="fixed top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
-    >
-      <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
-        online === true ? "Online" : "Offline"
-      }}</span>
-    </div>
     <div class="w-full flex flex-col p-5 gap-1">
       <div class="w-full flex items-center justify-center">
         <img

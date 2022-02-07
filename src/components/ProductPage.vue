@@ -5,22 +5,15 @@
     >
       <div
         @click="next"
-        class="absolute bottom-0 right-10 select-none cursor-pointer"
+        class="absolute -bottom-1 right-10 select-none cursor-pointer"
       >
         Next project
       </div>
       <div
         @click="prev"
-        class="absolute bottom-0 left-10 select-none cursor-pointer"
+        class="absolute -bottom-1 left-10 select-none cursor-pointer"
       >
         prev project
-      </div>
-      <div
-        class="fixed top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
-      >
-        <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
-          online === true ? "Online" : "Offline"
-        }}</span>
       </div>
       <h1 class="text-center md:text-5xl text-3xl mt-2 text-blue-800">
         Products
@@ -28,14 +21,14 @@
       <transition name="first">
         <div
           v-if="show === 1"
-          class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
+          class="flex flex-col gap-4 md:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
         >
           <img
             src="./../../public/MyImage/pexels-photo-9668543.jpeg"
             class="h-1/2 w-full object-cover object-center shadow-md"
             alt=""
           />
-          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
+          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[50%]">
             Todo list
           </h1>
           <p>
@@ -111,12 +104,9 @@
 import NavbarBottom from "./NavbarBottom.vue";
 import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
-import { useOnline } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
 export default {
   setup() {
-    //online status
-    const online = useOnline();
     //change title
     const title = useTitle();
     title.value = "Product";
