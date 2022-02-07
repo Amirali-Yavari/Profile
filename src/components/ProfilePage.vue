@@ -40,6 +40,7 @@
 import NavbarBottom from "./NavbarBottom.vue";
 import { useTitle } from "@vueuse/core";
 import { useOnline } from "@vueuse/core";
+import OnlineError from "./OnlineError.vue";
 export default {
   setup() {
     //online status
@@ -51,6 +52,7 @@ export default {
   },
   components: {
     NavbarBottom,
+    OnlineError,
   },
 };
 </script>

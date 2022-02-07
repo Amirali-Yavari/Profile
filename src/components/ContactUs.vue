@@ -1,8 +1,8 @@
 <template>
-  <OnlineError v-if="online === false" />
   <div
     class="h-[80vh] w-[200vw] sm:w-[100vw] flex flex-row items-center relative"
   >
+    <OnlineError v-if="online === false" />
     <div class="w-1/2 flex flex-col p-10 gap-8 relative">
       <div
         @click="ScrollRight"
@@ -133,6 +133,7 @@
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
 import ModalContact from "./ModalContactPage.vue";
+import OnlineError from "./OnlineError.vue";
 import { useTitle } from "@vueuse/core";
 import { ref } from "vue";
 import { onKeyStroke } from "@vueuse/core";
@@ -233,6 +234,7 @@ export default {
   components: {
     NavbarBottom,
     ModalContact,
+    OnlineError,
   },
 };
 </script>

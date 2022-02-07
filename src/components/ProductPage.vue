@@ -103,6 +103,7 @@
 </template>
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
+import OnlineError from "./OnlineError.vue";
 import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
@@ -174,6 +175,7 @@ export default {
   },
   components: {
     NavbarBottom,
+    OnlineError,
   },
 };
 </script>
