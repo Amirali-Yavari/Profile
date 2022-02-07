@@ -1,5 +1,6 @@
 <template>
   <div class="h-[90vh] md:h-[92vh] w-1/2 relative flex">
+    <OnlineError v-if="online === false" />
     <div
       @click="ScrollRight"
       class="absolute mb-1 sm:hidden animate-bounce bottom-0 right-4 cursor-pointer font-bold select-none"
@@ -40,6 +41,7 @@ import MySummary from "./MainPage/MySummary.vue";
 import ReadMore from "./MainPage/ReadMore.vue";
 import NavbarBottom from "./NavbarBottom.vue";
 import MyLogo from "./MainPage/MyLogo.vue";
+import OnlineError from "./OnlineError.vue";
 import { onMounted, ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
@@ -76,12 +78,13 @@ export default {
       });
     }
     return {
+      online,
       ShowTrue,
       ScrollRight,
-      online,
     };
   },
   components: {
+    OnlineError,
     MyTitle,
     MySummary,
     ReadMore,

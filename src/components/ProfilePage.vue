@@ -38,15 +38,12 @@
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
 import { useTitle } from "@vueuse/core";
-import { useOnline } from "@vueuse/core";
 export default {
   setup() {
-    //online status
-    const online = useOnline();
     // change title
     const title = useTitle();
     title.value = "Profile";
-    return { online };
+    return {};
   },
   components: {
     NavbarBottom,

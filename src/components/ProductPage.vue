@@ -166,7 +166,7 @@ export default {
           break;
       }
     });
-    return { prev, next, show, online };
+    return { prev, next, show };
   },
   components: {
     NavbarBottom,

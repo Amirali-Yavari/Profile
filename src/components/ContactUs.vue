@@ -143,12 +143,8 @@ import { useTitle } from "@vueuse/core";
 import { ref } from "vue";
 import { onKeyStroke } from "@vueuse/core";
 import { onStartTyping } from "@vueuse/core";
-import { useOnline } from "@vueuse/core";
 export default {
   setup() {
-    //online status
-    let online = useOnline();
-
     //start typing
     const input = ref(null);
     onStartTyping(() => {
@@ -234,7 +230,6 @@ export default {
       github,
       ScrollLeft,
       ScrollRight,
-      online,
     };
   },
   components: {
