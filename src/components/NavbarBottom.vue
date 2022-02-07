@@ -68,7 +68,7 @@ export default {
 }
 .navhide-enter-to,
 .navhide-leave-from {
-  height: 9rem;
+  height: 11rem;
   opacity: 1;
   transition: all 0.5s ease;
 }
