@@ -1,4 +1,5 @@
 <template>
+  <OnlineError v-if="online === false" />
   <div class="flex flex-col items-center h-screen">
     <div
       class="w-full gap-8 relative flex flex-col items-center justify-center p-5"
@@ -105,8 +106,11 @@ import NavbarBottom from "./NavbarBottom.vue";
 import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    const online = useOnline();
     //change title
     const title = useTitle();
     title.value = "Product";
@@ -166,7 +170,7 @@ export default {
           break;
       }
     });
-    return { prev, next, show };
+    return { prev, next, show, online };
   },
   components: {
     NavbarBottom,

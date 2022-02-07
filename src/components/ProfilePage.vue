@@ -1,4 +1,5 @@
 <template>
+  <OnlineError v-if="online === false" />
   <div class="h-screen w-full flex">
     <div class="w-full flex flex-col p-5 gap-1">
       <div class="w-full flex items-center justify-center">
@@ -38,12 +39,15 @@
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
 import { useTitle } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    const online = useOnline();
     // change title
     const title = useTitle();
     title.value = "Profile";
-    return {};
+    return { online };
   },
   components: {
     NavbarBottom,

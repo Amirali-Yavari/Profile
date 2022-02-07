@@ -1,14 +1,8 @@
 <template>
+  <OnlineError v-if="online === false" />
   <div
     class="h-[80vh] w-[200vw] sm:w-[100vw] flex flex-row items-center relative"
   >
-    <div
-      class="absolute top-1 left-1 bg-white p-1 rounded-2xl shadow-md cursor-pointer select-none"
-    >
-      <span :class="online === true ? 'text-green-500' : 'text-red-500'">{{
-        online === true ? "Online" : "Offline"
-      }}</span>
-    </div>
     <div class="w-1/2 flex flex-col p-10 gap-8 relative">
       <div
         @click="ScrollRight"
@@ -143,8 +137,11 @@ import { useTitle } from "@vueuse/core";
 import { ref } from "vue";
 import { onKeyStroke } from "@vueuse/core";
 import { onStartTyping } from "@vueuse/core";
+import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    //online status
+    const online = useOnline();
     //start typing
     const input = ref(null);
     onStartTyping(() => {
@@ -220,6 +217,7 @@ export default {
       });
     }
     return {
+      online,
       modalValue,
       showModal,
       input,
