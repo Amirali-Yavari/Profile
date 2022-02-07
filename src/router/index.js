@@ -6,6 +6,11 @@ const routes = [
     component: () => import("./../components/MainPage.vue"),
   },
   {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("./../components/NotFound.vue"),
+  },
+  {
     path: "/Profile",
     name: "Profile",
     component: () => import("./../components/ProfilePage.vue"),

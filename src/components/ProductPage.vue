@@ -47,7 +47,7 @@
           <div
             class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
           >
-            Read more
+            More
           </div>
         </div>
       </transition>
@@ -73,7 +73,7 @@
           <div
             class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
           >
-            Read more
+            More
           </div>
         </div></transition
       >
@@ -99,7 +99,7 @@
           <div
             class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
           >
-            Read more
+            More
           </div>
         </div></transition
       >
