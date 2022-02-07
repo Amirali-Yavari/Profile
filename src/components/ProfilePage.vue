@@ -11,16 +11,16 @@
       <div class="w-full flex items-center justify-center">
         <img
           src="./../../public/MyImage/person_3-removebg-preview.png"
-          class="rounded-full w-2/3 sm:w-1/3 md:fixed md:h-full md:right-0 md:top-0 md:rounded-none md:w-2/4 shadow-md md:shadow-none md:object-cover md:object-top"
+          class="rounded-full w-1/3 md:fixed md:h-full md:right-0 md:top-0 md:rounded-none md:w-2/4 shadow-md md:shadow-none md:object-cover md:object-top"
           alt=""
         />
       </div>
-      <div class="md:w-2/4 w-full mt-2">
-        <h1 class="text-3xl md:text-5xl text-left text-blue-900">Profile</h1>
-        <p class="text-lg md:text-2xl md:mt-3">
-          Im a Front-End Developer and Designer
-        </p>
-        <h2 class="text-3xl md:text-3xl text-blue-900 mt-5">About Me</h2>
+      <div
+        class="md:w-2/4 w-full mt-2 md:flex md:flex-col md:justify-center md:h-screen md:gap-5"
+      >
+        <h1 class="text-3xl md:text-5xl text-blue-900">Profile</h1>
+        <p class="text-lg md:text-2xl">Im a Front-End Developer and Designer</p>
+        <h2 class="text-3xl md:text-3xl text-blue-900">About Me</h2>
         <p class="text-lg md:text-2xl mt-2">
           At first i programed the Windows application with C# then i know the
           PHP and i liked Back-End on thats time i meet
