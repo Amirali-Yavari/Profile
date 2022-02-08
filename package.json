@@ -34,7 +34,6 @@
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue-cli-plugin-i18n": "~2.3.1"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[11.5rem] w-1/2 sm:w-1/3 md:w-1/5 bg-gray-600/90 fixed left-0 bottom-16 z-30 text-white flex flex-col"
+    class="h-[9rem] w-1/2 sm:w-1/3 md:w-1/5 bg-gray-600/90 fixed left-0 bottom-16 z-30 text-white flex flex-col"
   >
     <router-link to="/">
       <div
