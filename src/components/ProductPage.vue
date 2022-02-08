@@ -19,84 +19,7 @@
       <h1 class="text-center md:text-5xl text-3xl mt-2 text-blue-800">
         Products
       </h1>
-      <transition name="first">
-        <div
-          v-if="show === 1"
-          class="flex flex-col gap-4 md:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
-        >
-          <img
-            src="./../../public/MyImage/pexels-photo-9668543.jpeg"
-            class="h-1/2 w-full object-cover object-center shadow-md"
-            alt=""
-          />
-          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[50%]">
-            Todo list
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-            voluptatum deserunt optio nobis cumque omnis error esse corrupti
-            blanditiis numquam consectetur, maiores mollitia a, libero soluta
-            quis! Possimus, modi quo?
-          </p>
-          <div
-            class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
-          >
-            More
-          </div>
-        </div>
-      </transition>
-      <transition name="first"
-        ><div
-          v-if="show === 2"
-          class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
-        >
-          <img
-            src="./../../public/MyImage/pexels-photo-9849841.jpeg"
-            class="h-1/2 w-full object-cover object-top shadow-md"
-            alt=""
-          />
-          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
-            DaalShop
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-            voluptatum deserunt optio nobis cumque omnis error esse corrupti
-            blanditiis numquam consectetur, maiores mollitia a, libero soluta
-            quis! Possimus, modi quo?
-          </p>
-          <div
-            class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
-          >
-            More
-          </div>
-        </div></transition
-      >
-      <transition name="first"
-        ><div
-          v-if="show === 3"
-          class="flex flex-col gap-4 sm:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
-        >
-          <img
-            src="./../../public/MyImage/69b13e8c2b404332afd6a9dae866332e.png"
-            class="h-1/2 w-full object-cover object-center shadow-md"
-            alt=""
-          />
-          <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[30%]">
-            MyProfile
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-            voluptatum deserunt optio nobis cumque omnis error esse corrupti
-            blanditiis numquam consectetur, maiores mollitia a, libero soluta
-            quis! Possimus, modi quo?
-          </p>
-          <div
-            class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
-          >
-            More
-          </div>
-        </div></transition
-      >
+      <transition name="product"> <Product /> </transition>
     </div>
     <NavbarBottom />
   </div>
@@ -104,6 +27,7 @@
 <script>
 import NavbarBottom from "./NavbarBottom.vue";
 import OnlineError from "./OnlineError.vue";
+import Product from "./ProductBox.vue";
 import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
@@ -176,16 +100,17 @@ export default {
   components: {
     NavbarBottom,
     OnlineError,
+    Product,
   },
 };
 </script>
 <style>
-.first-enter-from {
+.product-enter-from {
   opacity: 0;
   transform: translateY(-50px);
   transition: all 1s ease;
 }
-.first-enter-to {
+.product-enter-to {
   opacity: 1;
   transform: translateY(0);
   transition: all 1s ease;
