@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col gap-4 md:w-1/3 p-4 ring-1 ring-gray-300 h-[70vh] shadow-md relative"
+    class="flex flex-col gap-4 md:w-1/3 ring-1 ring-gray-300 bg-gray-100 p-4 h-[70vh] relative"
   >
     <img
       src="./../../public/MyImage/pexels-photo-9668543.jpeg"
