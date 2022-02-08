@@ -8,12 +8,10 @@
       alt=""
     />
     <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[50%]">
-      Todo list
+      {{ title }}
     </h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatum
-      deserunt optio nobis cumque omnis error esse corrupti blanditiis numquam
-      consectetur, maiores mollitia a, libero soluta quis! Possimus, modi quo?
+      {{ text }}
     </p>
     <div
       class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
@@ -22,3 +20,12 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    title: String,
+    text: String,
+    show: Number,
+  },
+};
+</script>

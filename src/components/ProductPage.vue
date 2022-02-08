@@ -5,13 +5,13 @@
       class="w-full gap-8 relative flex flex-col items-center justify-center p-5"
     >
       <div
-        @click="next"
+        @click="NextProduct"
         class="absolute -bottom-1 right-10 select-none cursor-pointer"
       >
         Next project
       </div>
       <div
-        @click="prev"
+        @click="PrevProduct"
         class="absolute -bottom-1 left-10 select-none cursor-pointer"
       >
         prev project
@@ -19,7 +19,14 @@
       <h1 class="text-center md:text-5xl text-3xl mt-2 text-blue-800">
         Products
       </h1>
-      <transition name="product"> <Product /> </transition>
+      <transition name="product" v-for="data in datas" :key="data.key">
+        <Product
+          :title="data.title"
+          v-if="show === data.key"
+          :show="show"
+          :text="data.text"
+        />
+      </transition>
     </div>
     <NavbarBottom />
   </div>
@@ -28,74 +35,50 @@
 import NavbarBottom from "./NavbarBottom.vue";
 import OnlineError from "./OnlineError.vue";
 import Product from "./ProductBox.vue";
+import ProductData from "./data/Products.json";
 import { ref } from "vue";
 import { useTitle } from "@vueuse/core";
 import { onKeyStroke } from "@vueuse/core";
 import { useOnline } from "@vueuse/core";
 export default {
   setup() {
+    let datas = ProductData;
+    console.log(datas);
     //online status
     const online = useOnline();
     //change title
     const title = useTitle();
     title.value = "Product";
     //data
-    let show = ref(1);
+    let show = ref(datas[0].key);
+    let firstProduct = ref(datas[0].key);
+    let lastProduct = ref(datas[datas.length - 1].key);
     //function
-    function next() {
-      switch (show.value) {
-        case 1:
-          show.value = 2;
-          break;
-        case 2:
-          show.value = 3;
-          break;
-        case 3:
-          show.value = 1;
-          break;
+    function NextProduct() {
+      if (show.value != lastProduct.value) {
+        show.value += 1;
+      } else {
+        show.value = datas[0].key;
       }
     }
-    function prev() {
-      switch (show.value) {
-        case 1:
-          show.value = 3;
-          break;
-        case 2:
-          show.value = 1;
-          break;
-        case 3:
-          show.value = 2;
-          break;
+    function PrevProduct() {
+      if (show.value != firstProduct.value) {
+        show.value -= 1;
+      } else {
+        show.value = lastProduct.value;
       }
     }
     //onKey
-    onKeyStroke("ArrowRight", () => {
-      switch (show.value) {
-        case 1:
-          show.value = 2;
-          break;
-        case 2:
-          show.value = 3;
-          break;
-        case 3:
-          show.value = 1;
-          break;
-      }
-    });
-    onKeyStroke("ArrowLeft", () => {
-      switch (show.value) {
-        case 1:
-          show.value = 3;
-          break;
-        case 2:
-          show.value = 1;
-          break;
-        case 3:
-          show.value = 2;
-          break;
-      }
-    });
-    return { prev, next, show, online };
+    onKeyStroke("ArrowRight", NextProduct);
+    onKeyStroke("ArrowLeft", PrevProduct);
+    return {
+      show,
+      online,
+      datas,
+      lastProduct,
+      NextProduct,
+      PrevProduct,
+    };
   },
   components: {
     NavbarBottom,
