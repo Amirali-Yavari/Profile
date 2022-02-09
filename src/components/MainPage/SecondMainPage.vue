@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[92vh] relative">
+  <div class="w-full h-[92vh] relative" ref="el">
     <div
       @click="ScrollLeft"
       class="absolute mb-1 sm:hidden animate-bounce bottom-[50%] left-4 cursor-pointer text-pink-500 font-bold select-none"
@@ -27,10 +27,21 @@
   </div>
 </template>
 <script>
+import { ref } from "vue";
 import { useStore } from "vuex";
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+import { breakpointsTailwind, useBreakpoints, useSwipe } from "@vueuse/core";
 export default {
   setup() {
+    //swipe to
+    const el = ref(null);
+    const { isSwiping, direction } = useSwipe(el, {
+      onSwipeEnd() {
+        if (direction.value == "RIGHT") {
+          store.commit("changeMainpageShowFirst");
+        }
+      },
+    });
+    //breakepoints
     const breakepoints = useBreakpoints(breakpointsTailwind);
     const smLarger = breakepoints.isGreater("sm");
     // vueX composition api
@@ -39,9 +50,9 @@ export default {
     function ScrollLeft() {
       store.commit("changeMainpageShowFirst");
     }
-    return { ScrollLeft, smLarger };
+    return { ScrollLeft, smLarger, el, isSwiping };
   },
-  components: {  },
+  components: {},
 };
 </script>
 <style></style>
