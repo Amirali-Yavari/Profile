@@ -6,7 +6,7 @@
   <div
     class="w-[100vw] h-16 flex flex-row justify-between items-center z-30 gap-8 fixed bottom-0 bg-white border-t border-gray-300"
   >
-    <div class="flex flex-row gap-1 items-center ">
+    <div class="flex flex-row gap-1 items-center">
       <div
         @click="ShowNavHide"
         ref="target"
@@ -27,7 +27,7 @@
           />
         </svg>
       </div>
-      <select class="cursor-pointer w-10 bg-white select-none">
+      <select class="cursor-pointer w-10 appearance-none bg-white select-none">
         <option value="en">en</option>
         <option value="fa">fa</option>
       </select>

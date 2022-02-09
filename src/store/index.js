@@ -3,9 +3,15 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     show: false,
-    page: "home",
+    MainPageShow: "first",
   },
   mutations: {
+    changeMainpageShowSecond(state) {
+      state.MainPageShow = "second";
+    },
+    changeMainpageShowFirst(state) {
+      state.MainPageShow = "first";
+    },
     ShowTrue(state) {
       state.show = true;
     },

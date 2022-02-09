@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[100vw] relative">
+  <div class="w-full h-[93vh] relative">
     <div
       @click="ScrollLeft"
       class="absolute mb-1 sm:hidden animate-bounce bottom-0 left-4 cursor-pointer text-pink-500 font-bold select-none"
@@ -24,12 +24,20 @@
       class="object-cover w-full z-10 h-full"
       alt=""
     />
+    <NavbarBottom v-if="smLarger == false" />
   </div>
 </template>
 <script>
 import { onKeyStroke } from "@vueuse/core";
+import NavbarBottom from "./../NavbarBottom.vue";
+import { useStore } from "vuex";
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 export default {
   setup() {
+    const breakepoints = useBreakpoints(breakpointsTailwind);
+    const smLarger = breakepoints.isGreater("sm");
+    // vueX composition api
+    const store = useStore();
     //use arrow key for going to first page
     onKeyStroke("ArrowLeft", () => {
       window.scrollTo({
@@ -40,15 +48,11 @@ export default {
     });
     //functions
     function ScrollLeft() {
-      window.scrollTo({
-        top: 0,
-        left: -100000,
-        behavior: "smooth",
-      });
+      store.commit("changeMainpageShowFirst");
     }
-    return { ScrollLeft };
+    return { ScrollLeft, smLarger };
   },
-  components: {},
+  components: { NavbarBottom },
 };
 </script>
 <style></style>

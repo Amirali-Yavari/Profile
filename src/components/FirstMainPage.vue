@@ -1,9 +1,9 @@
 <template>
-  <div class="h-[90vh] md:h-[92vh] w-[100vw] relative flex">
+  <div class="h-screen md:h-[92vh] w-full snap-center relative flex">
     <OnlineError v-if="online === false" />
     <div
       @click="ScrollRight"
-      class="absolute mb-1 sm:hidden animate-bounce bottom-0 right-4 cursor-pointer font-bold select-none"
+      class="absolute mb-1 sm:hidden animate-bounce bottom-[50%] right-4 cursor-pointer font-bold select-none"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -22,15 +22,9 @@
     </div>
     <div class="p-10 flex flex-col gap-8">
       <MyLogo />
-      <transition name="title">
-        <MyTitle v-if="ShowTrue" />
-      </transition>
-      <transition name="summary">
-        <MySummary v-if="ShowTrue" />
-      </transition>
-      <transition name="read">
-        <ReadMore v-if="ShowTrue" />
-      </transition>
+      <MyTitle />
+      <MySummary />
+      <ReadMore />
     </div>
     <NavbarBottom />
   </div>
@@ -42,44 +36,25 @@ import ReadMore from "./MainPage/ReadMore.vue";
 import NavbarBottom from "./NavbarBottom.vue";
 import MyLogo from "./MainPage/MyLogo.vue";
 import OnlineError from "./OnlineError.vue";
-import { onMounted, ref } from "vue";
-import { useTitle } from "@vueuse/core";
-import { onKeyStroke } from "@vueuse/core";
-import { useOnline } from "@vueuse/core";
+// import { ref } from "vue";
+import { useOnline, useTitle } from "@vueuse/core";
+import { useStore } from "vuex";
 export default {
   setup() {
+    // vueX composition api
+    const store = useStore();
     //online status
     const online = useOnline();
-    //use arrow key for going to second page
-    onKeyStroke("ArrowRight", () => {
-      window.scrollTo({
-        top: 0,
-        left: 100000,
-        behavior: "smooth",
-      });
-    });
     //change title
     const title = useTitle();
     title.value = "Amirali Yavari";
-    //data
-    let ShowTrue = ref(false);
     //Hooks
-    onMounted(() => {
-      setTimeout(() => {
-        ShowTrue.value = true;
-      }, 300);
-    });
     //Functions
     function ScrollRight() {
-      window.scrollTo({
-        top: 0,
-        left: 100000,
-        behavior: "smooth",
-      });
+      store.commit("changeMainpageShowSecond");
     }
     return {
       online,
-      ShowTrue,
       ScrollRight,
     };
   },
@@ -93,36 +68,5 @@ export default {
   },
 };
 </script>
-<style scoped>
-.title-enter-from {
-  transform: translateX(-40px) rotateZ(-35deg) scale(1.5);
-  opacity: 0;
-  transition: all 1s ease;
-}
-.title-enter-to {
-  transform: translateX(0px) rotateZ(deg) scale(1);
-  opacity: 1;
-  transition: all 1s ease;
-}
-.summary-enter-from {
-  transform: translateX(50px) rotateZ(35deg);
-  opacity: 0;
-  transition: all 1s ease;
-}
-.summary-enter-to {
-  transform: translateX(0px) rotateZ(0deg);
-  opacity: 1;
-  transition: all 1s ease;
-}
-.read-enter-from {
-  transform: scale(0.5);
-  opacity: 0;
-  transition: all 1.2s ease;
-}
-.read-enter-to {
-  transform: scale(1);
-  opacity: 1;
-  transition: all 1.2s ease;
-}
-</style>
+<style scoped></style>
 >
