@@ -79,14 +79,14 @@ export default {
     const el = ref(null);
     const { isSwiping, direction } = useSwipe(el, {
       onSwipeEnd() {
-        if (direction.value == "LEFT") {
+        if (direction.value == "RIGHT") {
           if (show.value != firstProduct.value) {
             show.value -= 1;
           } else {
             show.value = lastProduct.value;
           }
         }
-        if (direction.value == "RIGHT") {
+        if (direction.value == "LEFT") {
           if (show.value != lastProduct.value) {
             show.value += 1;
           } else {
