@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen md:h-[92vh] w-full snap-center relative flex">
+  <div class="h-screen md:h-[92vh] w-full snap-center relative flex" ref="el">
     <OnlineError v-if="online === false" />
     <div
       @click="ScrollRight"
@@ -26,21 +26,28 @@
       <MySummary />
       <ReadMore />
     </div>
-    <NavbarBottom />
   </div>
 </template>
 <script>
 import MyTitle from "./MainPage/MyTitle.vue";
 import MySummary from "./MainPage/MySummary.vue";
 import ReadMore from "./MainPage/ReadMore.vue";
-import NavbarBottom from "./NavbarBottom.vue";
 import MyLogo from "./MainPage/MyLogo.vue";
 import OnlineError from "./OnlineError.vue";
-// import { ref } from "vue";
-import { useOnline, useTitle } from "@vueuse/core";
+import { ref } from "vue";
+import { useOnline, useTitle, useSwipe } from "@vueuse/core";
 import { useStore } from "vuex";
 export default {
   setup() {
+    //Swipe to
+    const el = ref(null);
+    const { isSwiping, direction } = useSwipe(el, {
+      onSwipeEnd() {
+        if (direction.value == "LEFT") {
+          store.commit("changeMainpageShowSecond");
+        }
+      },
+    });
     // vueX composition api
     const store = useStore();
     //online status
@@ -54,6 +61,8 @@ export default {
       store.commit("changeMainpageShowSecond");
     }
     return {
+      isSwiping,
+      el,
       online,
       ScrollRight,
     };
@@ -64,7 +73,6 @@ export default {
     MySummary,
     ReadMore,
     MyLogo,
-    NavbarBottom,
   },
 };
 </script>

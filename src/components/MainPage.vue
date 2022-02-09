@@ -10,9 +10,11 @@
         v-if="this.$store.state.MainPageShow === 'second' || smLarger"
       />
     </transition>
+    <NavbarBottom />
   </div>
 </template>
 <script>
+import NavbarBottom from "./NavbarBottom.vue";
 import SecondMainPage from "./MainPage/SecondMainPage.vue";
 import FirstMainPage from "./FirstMainPage";
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
@@ -23,6 +25,7 @@ export default {
     return { smLarger };
   },
   components: {
+    NavbarBottom,
     FirstMainPage,
     SecondMainPage,
   },
@@ -31,26 +34,28 @@ export default {
 <style scoped>
 .firstPage-enter-from,
 .firstPage-leave-to {
-  transform: translateX(-100vw);
+  width: 0%;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
 }
 .firstPage-enter-to,
 .firstPage-leave-from {
-  transform: translateX(0px);
+  width: 100%;
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
 }
 .secondPage-enter-from,
 .secondPage-leave-to {
-  transform: translateX(100vw);
+  transform: translateX(10vw);
+  width: 0%;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
 }
 .secondPage-enter-to,
 .secondPage-leave-from {
   transform: translateX(0px);
+  width: 100%;
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
 }
 </style>
