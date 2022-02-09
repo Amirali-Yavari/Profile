@@ -1,6 +1,6 @@
 <template>
-  <OnlineError v-if="online === false" />
   <div ref="el" class="flex flex-col items-center h-screen">
+    <OnlineError v-if="online === false" />
     <div
       class="w-full gap-8 relative flex flex-col items-center justify-center p-5"
     >

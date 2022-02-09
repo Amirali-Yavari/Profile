@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[90vh] md:h-[92vh] w-1/2 relative flex">
+  <div class="h-[90vh] md:h-[92vh] w-[100vw] relative flex">
     <OnlineError v-if="online === false" />
     <div
       @click="ScrollRight"
