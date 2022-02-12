@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[92vh] relative" ref="el">
+  <div class="w-full h-[92vh] relative z-10" ref="el">
     <div
       @click="ScrollLeft"
       class="absolute mb-1 sm:hidden animate-bounce bottom-[50%] left-4 cursor-pointer text-pink-500 font-bold select-none"
@@ -21,7 +21,7 @@
     </div>
     <img
       src="./../../../public/MyImage/vv-min-removebg.png"
-      class="object-cover w-full z-10 h-[92vh]"
+      class="object-cover w-full h-[92vh]"
       alt=""
     />
   </div>

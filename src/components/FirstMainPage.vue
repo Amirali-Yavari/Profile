@@ -1,5 +1,8 @@
 <template>
-  <div class="h-screen md:h-[92vh] w-full snap-center relative flex" ref="el">
+  <div
+    class="h-screen md:h-[92vh] w-full snap-center relative flex sm:z-10 z-20"
+    ref="el"
+  >
     <OnlineError v-if="online === false" />
     <div
       @click="ScrollRight"
@@ -21,10 +24,10 @@
       </svg>
     </div>
     <div class="p-10 flex flex-col gap-8">
-      <MyLogo />
-      <MyTitle />
-      <MySummary />
-      <ReadMore />
+      <MyLogo class="z-10" />
+      <MyTitle class="z-10" />
+      <MySummary class="z-10" />
+      <ReadMore class="z-10" />
     </div>
   </div>
 </template>

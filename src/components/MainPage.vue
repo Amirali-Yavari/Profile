@@ -1,5 +1,24 @@
 <template>
   <div class="flex flex-nowrap w-[100vw] touch-pan-x bg-gray-200">
+    <vue-particles
+      class="absolute top-0 left-0 h-screen z-10"
+      color="#EC4899"
+      :particleOpacity="0.4"
+      :particlesNumber="100"
+      shapeType="circle"
+      :particleSize="4"
+      linesColor="#EC4899"
+      :linesWidth="1"
+      :lineLinked="true"
+      :lineOpacity="0.4"
+      :linesDistance="150"
+      :moveSpeed="3"
+      :hoverEffect="true"
+      hoverMode="grab"
+      :clickEffect="true"
+      clickMode="push"
+    >
+    </vue-particles>
     <transition name="firstPage">
       <FirstMainPage
         v-if="this.$store.state.MainPageShow === 'first' || smLarger"
