@@ -4,7 +4,7 @@
       class="absolute top-0 left-0 h-screen z-10"
       color="#EC4899"
       :particleOpacity="0.4"
-      :particlesNumber="100"
+      :particlesNumber="70"
       shapeType="circle"
       :particleSize="4"
       linesColor="#EC4899"
@@ -50,7 +50,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 .firstPage-enter-from,
 .firstPage-leave-to {
   width: 0%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/2 flex flex-col p-10 gap-8 relative">
+  <div class="w-full sm:w-1/2 flex flex-col p-10 gap-8 relative" ref="el">
     <transition name="modal">
       <ModalContact
         class="z-30"
@@ -37,7 +37,7 @@
     <div class="grid grid-cols-2 grid-rows-2 gap-2">
       <div
         @click="instagram"
-        class="flex flex-row gap-1 items-center text-lg select-none transform hover:scale-105 transition cursor-pointer shadow-md ring-1 ring-gray-300"
+        class="flex flex-row gap-1 items-center text-lg select-none transform hover:scale-105 transition cursor-pointer shadow-md ring-1 ring-gray-300 bg-gray-200"
       >
         <img
           class="w-10 h-10"
@@ -85,13 +85,29 @@
 <script>
 import { ref } from "vue";
 import ModalContact from "./ModalContactPage.vue";
+import { useSwipe } from "@vueuse/core";
+import { useStore } from "vuex";
 export default {
   components: { ModalContact },
   setup() {
+    //Swipe to
+    const el = ref(null);
+    const { isSwiping, direction } = useSwipe(el, {
+      onSwipeEnd() {
+        if (direction.value == "LEFT") {
+          store.commit("changeContactShowSecond");
+        }
+      },
+    });
+    // vueX composition api
+    const store = useStore();
     // data
     let modalValue = ref("");
     let showModal = ref(false);
     //Functions
+    function ScrollRight() {
+      store.commit("changeContactShowSecond");
+    }
     function closebtn() {
       modalValue.value = "";
       showModal.value = false;
@@ -118,6 +134,7 @@ export default {
     }
     //---------------------------
     return {
+      ScrollRight,
       closebtn,
       instagram,
       telegram,
@@ -125,6 +142,8 @@ export default {
       github,
       modalValue,
       showModal,
+      isSwiping,
+      el,
     };
   },
 };

@@ -1,7 +1,11 @@
 <template>
-  <div class="w-1/2 flex flex-col items-center gap-3 relative">
+  <div
+    class="w-full sm:w-1/2 flex flex-col items-center gap-3 relative"
+    ref="el"
+  >
     <div
       class="absolute mb-1 sm:hidden -bottom-10 left-4 cursor-pointer text-pink-500 font-bold select-none"
+      @click="ScrollLeft"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +46,27 @@
   </div>
 </template>
 <script>
+import { ref } from "vue";
+import { useSwipe } from "@vueuse/core";
+import { useStore } from "vuex";
 export default {
-  setup() {},
+  setup() {
+    //functions
+    function ScrollLeft() {
+      store.commit("changeContactShowFirst");
+    }
+    // vueX composition api
+    const store = useStore();
+    //swipe to
+    const el = ref(null);
+    const { isSwiping, direction } = useSwipe(el, {
+      onSwipeEnd() {
+        if (direction.value == "RIGHT") {
+          store.commit("changeContactShowFirst");
+        }
+      },
+    });
+    return { el, isSwiping, ScrollLeft };
+  },
 };
 </script>

@@ -4,6 +4,7 @@ export default createStore({
   state: {
     show: false,
     MainPageShow: "first",
+    ContactPageShow: "first",
   },
   mutations: {
     changeMainpageShowSecond(state) {
@@ -11,6 +12,12 @@ export default createStore({
     },
     changeMainpageShowFirst(state) {
       state.MainPageShow = "first";
+    },
+    changeContactShowSecond(state) {
+      state.ContactPageShow = "second";
+    },
+    changeContactShowFirst(state) {
+      state.ContactPageShow = "first";
     },
     ShowTrue(state) {
       state.show = true;
