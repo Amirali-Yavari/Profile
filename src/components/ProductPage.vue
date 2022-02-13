@@ -1,51 +1,28 @@
 <template>
-  <div ref="el" class="flex flex-col items-center h-screen">
+  <div ref="el" class="flex flex-col items-center h-screen z-20">
+    <vue-particles
+      class="absolute w-full top-0 left-0 h-screen"
+      color="#EC4899"
+      :particleOpacity="0.4"
+      :particlesNumber="50"
+      shapeType="circle"
+      :particleSize="4"
+      linesColor="#EC4899"
+      :linesWidth="1"
+      :lineLinked="true"
+      :lineOpacity="0.4"
+      :linesDistance="150"
+      :moveSpeed="3"
+      :hoverEffect="true"
+      hoverMode="grab"
+      :clickEffect="true"
+      clickMode="push"
+    >
+    </vue-particles>
     <OnlineError v-if="online === false" />
     <div
       class="w-full gap-8 relative flex flex-col items-center justify-center p-5"
     >
-      <!-- <div
-        @click="NextProduct"
-        class="absolute -bottom-1 right-10 select-none cursor-pointer"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          aria-hidden="true"
-          role="img"
-          class="iconify iconify--fontisto"
-          width="32"
-          height="32"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M24 12.16L18.24 6.4v4.24H0v3.04h18.24v4.24z"
-            fill="currentColor"
-          ></path>
-        </svg>
-      </div>
-      <div
-        @click="PrevProduct"
-        class="absolute -bottom-1 left-10 select-none cursor-pointer"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          aria-hidden="true"
-          role="img"
-          class="iconify iconify--fontisto"
-          width="32"
-          height="32"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M24 10.64H5.76V6.4L0 12.16l5.76 5.76v-4.24H24z"
-            fill="currentColor"
-          ></path>
-        </svg>
-      </div> -->
       <h1 class="text-center md:text-5xl text-3xl mt-2 text-blue-800">
         Products
       </h1>
