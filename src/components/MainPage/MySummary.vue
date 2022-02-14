@@ -1,8 +1,6 @@
 <template>
-  <div class="w-full text-left text-blue-900 font-bold">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum minima
-    corrupti tenetur ex nam, autem debitis repudiandae deleniti laboriosam,
-    assumenda facilis quasi! Sequi voluptas ut eius odio exercitationem qui
-    culpa.
+  <div class="w-full text-left text-xl text-blue-900 font-bold">
+    Im a 19 years old Front-End developer and designer with 3 years experince
+    then im coding with VueJs and NuxtJs
   </div>
 </template>
