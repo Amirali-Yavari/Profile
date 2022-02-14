@@ -45,33 +45,62 @@ import Product from "./ProductBox.vue";
 import ProductData from "./data/Products.json";
 import { ref } from "vue";
 import {
+  breakpointsTailwind,
+  useBreakpoints,
   useOnline,
   useSwipe,
   onKeyStroke,
   useTitle,
-  // usePointerSwipe,
+  usePointerSwipe,
 } from "@vueuse/core";
 export default {
   setup() {
+    //break points
+    const breakepoints = useBreakpoints(breakpointsTailwind);
+    const smLarger = breakepoints.isGreater("sm");
     const el = ref(null);
-    const { isSwiping, direction } = useSwipe(el, {
-      onSwipeEnd() {
-        if (direction.value == "RIGHT") {
-          if (show.value != firstProduct.value) {
-            show.value -= 1;
-          } else {
-            show.value = lastProduct.value;
+    //use swipe for phone size
+    if (smLarger === false) {
+      const { direction } = useSwipe(el, {
+        onSwipeEnd() {
+          if (direction.value == "RIGHT") {
+            if (show.value != firstProduct.value) {
+              show.value -= 1;
+            } else {
+              show.value = lastProduct.value;
+            }
           }
-        }
-        if (direction.value == "LEFT") {
-          if (show.value != lastProduct.value) {
-            show.value += 1;
-          } else {
-            show.value = datas[0].key;
+          if (direction.value == "LEFT") {
+            if (show.value != lastProduct.value) {
+              show.value += 1;
+            } else {
+              show.value = datas[0].key;
+            }
           }
-        }
-      },
-    });
+        },
+      });
+    }
+    //use pointer swipe for larger than phone
+    if (smLarger) {
+      const { direction } = usePointerSwipe(el, {
+        onSwipeEnd() {
+          if (direction.value == "LEFT") {
+            if (show.value != firstProduct.value) {
+              show.value -= 1;
+            } else {
+              show.value = lastProduct.value;
+            }
+          }
+          if (direction.value == "RIGHT") {
+            if (show.value != lastProduct.value) {
+              show.value += 1;
+            } else {
+              show.value = datas[0].key;
+            }
+          }
+        },
+      });
+    }
     let datas = ProductData;
     //online status
     const online = useOnline();
@@ -102,8 +131,6 @@ export default {
     onKeyStroke("ArrowLeft", PrevProduct);
     return {
       el,
-      direction,
-      isSwiping,
       show,
       online,
       datas,
