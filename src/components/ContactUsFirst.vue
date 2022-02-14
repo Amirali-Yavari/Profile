@@ -29,10 +29,8 @@
     </div>
     <h1 class="text-3xl text-blue-900">Contact Us</h1>
     <p class="text-lg">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-      explicabo praesentium ratione nam adipisci nobis, eius nesciunt voluptate
-      nihil saepe quibusdam, deserunt ut ad perferendis dolorem pariatur quo
-      minus officia!
+      If you want to contact me i give you 4 ways to you if you see any bug or
+      something new please tell me I will be happy
     </p>
     <div class="grid grid-cols-2 grid-rows-2 gap-2">
       <div
