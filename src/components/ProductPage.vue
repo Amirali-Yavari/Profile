@@ -32,6 +32,7 @@
           v-if="show === data.key"
           :show="show"
           :text="data.text"
+          :image="data.image"
         />
       </transition>
     </div>

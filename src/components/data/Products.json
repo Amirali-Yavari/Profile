@@ -2,25 +2,19 @@
     {
         "key":1,
         "title":"Todo list",
-        "text":"Product 1 text is lorem ",
-        "image":"image1"
+        "text":"Its was my first Vue project ",
+        "image":"./../../public/MyImage/image1.jpg"
     },
     {
         "key":2,
         "title":"DaalShop",
-        "text":"Product 2 text is lorem ",
-        "image":"image2"
+        "text":"this is a startup and i make the front end of that",
+        "image":"image2.jpg"
     },
     {
         "key":3,
         "title":"My profile website",
-        "text":"Product 3 text is lorem ",
-        "image":"image3"
-    },
-    {
-        "key":4,
-        "title":"My test",
-        "text":"Product 4 text is lorem ",
-        "image":"image3"
+        "text":"this is my first profesional vue project ",
+        "image":"image3.jpg"
     }
 ]

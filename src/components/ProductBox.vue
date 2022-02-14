@@ -3,7 +3,7 @@
     class="flex flex-col gap-4 md:w-1/3 ring-1 ring-gray-300 bg-gray-100 p-4 h-[70vh] relative"
   >
     <img
-      src="./../../public/MyImage/pexels-photo-9668543.jpeg"
+      :src="image"
       class="h-1/2 w-full object-cover object-center shadow-md"
       alt=""
     />
@@ -25,6 +25,7 @@ export default {
   props: {
     title: String,
     text: String,
+    image: String,
     show: Number,
   },
 };
