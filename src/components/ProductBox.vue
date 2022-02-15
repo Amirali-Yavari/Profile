@@ -3,21 +3,30 @@
     class="flex flex-col gap-4 md:w-1/3 ring-1 ring-gray-300 bg-gray-100 p-4 h-[70vh] relative"
   >
     <img
-      :src="image"
+      v-if="image == 1"
+      src="./../../public/MyImage/image1.jpg"
       class="h-1/2 w-full object-cover object-center shadow-md"
-      alt=""
+      :alt="image"
     />
-    <h1 class="text-2xl text-blue-900 border-b-2 border-pink-500 w-[50%]">
+    <img
+      v-if="image == 2"
+      src="./../../public/MyImage/image3.jpeg"
+      class="h-1/2 w-full object-cover object-center shadow-md"
+      :alt="image"
+    />
+    <img
+      v-if="image == 3"
+      src="./../../public/MyImage/image2.jpg"
+      class="h-1/2 w-full object-cover object-center shadow-md"
+      :alt="image"
+    />
+    <h1 class="text-3xl text-blue-900 border-b-2 border-pink-500 w-[50%]">
       {{ title }}
     </h1>
-    <p>
+    <p class="md:text-xl">
       {{ text }}
     </p>
-    <div
-      class="border border-blue-900 transition select-none shadow-md text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer w-[30%] text-center p-2"
-    >
-      More
-    </div>
+    
   </div>
 </template>
 <script>

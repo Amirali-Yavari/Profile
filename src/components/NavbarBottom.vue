@@ -27,7 +27,9 @@
           />
         </svg>
       </div>
-      <select class="cursor-pointer w-10 appearance-none bg-white select-none">
+      <select
+        class="cursor-pointer w-10 appearance-none hidden bg-white select-none"
+      >
         <option value="en">en</option>
         <option value="fa">fa</option>
       </select>
